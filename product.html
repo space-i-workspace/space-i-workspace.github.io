@@ -610,7 +610,7 @@
                         <h3 class="text-xl font-bold text-navy">개인사업자</h3>
                     </div>
                     <div class="text-center mb-8">
-                        <span class="text-4xl font-black text-navy">42,900</span>
+                        <span class="text-4xl font-black text-navy">21,000</span>
                         <span class="text-slate-500">원/월~</span>
                     </div>
                     <ul class="space-y-3 mb-8">
@@ -707,8 +707,8 @@
                 </div>
             </div>
             <div class="text-center mt-12 fade-up">
-                <a href="#order" class="inline-flex items-center gap-2 px-10 py-4 bg-gold text-white rounded-full font-bold text-lg hover:bg-gold-dark hover:shadow-2xl hover:shadow-gold/20 transition-all duration-300">
-                    지금 바로 신청하기
+                <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-10 py-4 bg-gold text-white rounded-full font-bold text-lg hover:bg-gold-dark hover:shadow-2xl hover:shadow-gold/20 transition-all duration-300">
+                    지금 바로 예약하기
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
@@ -1067,7 +1067,7 @@
                     <div>
                         <h3 class="text-lg font-bold text-navy mb-4">상품 선택</h3>
                         <div class="space-y-3" id="productOptions">
-                            <label class="option-card selected flex items-start gap-4 p-6 bg-white rounded-2xl border-2 border-gold shadow-sm" data-price="42900" data-name="개인사업자 (6개월)">
+                            <label class="option-card selected flex items-start gap-4 p-6 bg-white rounded-2xl border-2 border-gold shadow-sm" data-price="21000" data-name="개인사업자 (6개월)">
                                 <div class="option-radio mt-0.5"><div></div></div>
                                 <div class="flex-1">
                                     <div class="flex items-center justify-between flex-wrap gap-2">
@@ -1077,7 +1077,7 @@
                                         </div>
                                         <div class="text-right">
                                             <span class="text-sm text-slate-400 line-through">165,000원</span>
-                                            <span class="text-2xl font-black text-navy ml-2">42,900<span class="text-sm font-medium text-slate-500">원/월</span></span>
+                                            <span class="text-2xl font-black text-navy ml-2">21,000<span class="text-sm font-medium text-slate-500">원/월</span></span>
                                         </div>
                                     </div>
                                     <p class="text-sm text-slate-500 mt-2">6개월 정기결제 기준 · 보증금 없음</p>
@@ -1147,13 +1147,13 @@
                             <div class="p-6 space-y-4">
                                 <div class="flex items-center justify-between" id="summaryProduct">
                                     <span class="text-sm text-slate-600">개인사업자 (6개월)</span>
-                                    <span class="text-sm font-semibold text-navy">42,900원/월</span>
+                                    <span class="text-sm font-semibold text-navy">21,000원/월</span>
                                 </div>
                                 <div id="summaryAddons"></div>
                                 <div class="border-t border-slate-100 pt-4">
                                     <div class="flex items-center justify-between">
                                         <span class="font-bold text-navy">총 결제금액</span>
-                                        <span class="text-2xl font-black text-navy" id="summaryTotal">42,900<span class="text-sm font-medium text-slate-500">원/월</span></span>
+                                        <span class="text-2xl font-black text-navy" id="summaryTotal">21,000<span class="text-sm font-medium text-slate-500">원/월</span></span>
                                     </div>
                                     <p class="text-xs text-slate-400 mt-1">VAT 포함 · 보증금 없음</p>
                                 </div>
@@ -1289,7 +1289,7 @@
         // 상품 선택 & 주문 요약
         const options = document.querySelectorAll('.option-card');
         const addons = document.querySelectorAll('[data-addon-price]');
-        let selectedPrice = 42900, selectedName = '개인사업자 (6개월)', addonTotal = 0, selectedAddons = [];
+        let selectedPrice = 21000, selectedName = '개인사업자 (6개월)', addonTotal = 0, selectedAddons = [];
 
         function updateSummary() {
             const total = selectedPrice + addonTotal;
