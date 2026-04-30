@@ -7,11 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     const sections = document.querySelectorAll('section[id]');
 
+    const logoImg = document.getElementById('logoImg');
     function handleNavScroll() {
         if (window.scrollY > 80) {
             navbar.classList.add('nav-scrolled');
+            if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
         } else {
             navbar.classList.remove('nav-scrolled');
+            if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
         }
     }
 

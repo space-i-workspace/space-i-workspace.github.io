@@ -75,7 +75,7 @@
     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
             <a href="index.html" class="flex items-center gap-2">
-                <span class="text-xl font-black text-white transition-colors" id="logoText">공간<span class="text-gold">i</span></span>
+                <img src="assets/images/logo_spacei.png" alt="공간i" class="h-10 transition-all duration-300 brightness-0 invert" id="logoImg">
             </a>
             <div class="hidden md:flex items-center gap-1">
                 <a href="index.html" class="nav-link">홈</a>
@@ -496,7 +496,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                    <span class="text-xl font-black text-white">공간<span class="text-gold">i</span></span>
+                    <img src="assets/images/logo_spacei.png" alt="공간i" class="h-10 brightness-0 invert">
                     <p class="text-white/40 text-sm mt-1">강남 서초 하이브랜드 빌딩 13F</p>
                 </div>
                 <div class="flex items-center gap-6 text-sm text-white/40">
@@ -514,6 +514,7 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         var nav = document.getElementById('nav');
+        var logoImg = document.getElementById('logoImg');
         var subNav = document.getElementById('subNav');
         var subNavLinks = document.querySelectorAll('.sub-nav-link');
         var sections = document.querySelectorAll('section[id]');
@@ -521,8 +522,10 @@
         window.addEventListener('scroll', function() {
             if (window.scrollY > 60) {
                 nav.classList.add('nav-scrolled');
+                if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
             } else {
                 nav.classList.remove('nav-scrolled');
+                if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
             }
             if (subNav) {
                 if (window.scrollY > 400) { subNav.classList.add('show'); } else { subNav.classList.remove('show'); }

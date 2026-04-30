@@ -96,7 +96,7 @@
     <nav class="fixed top-[44px] left-0 right-0 z-50 transition-all duration-300" id="nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
             <a href="index.html" class="flex items-center gap-2">
-                <span class="text-xl font-black text-white transition-colors" id="logoText">공간<span class="text-gold">i</span></span>
+                <img src="assets/images/logo_spacei.png" alt="공간i" class="h-10 transition-all duration-300 brightness-0 invert" id="logoImg">
             </a>
             <div class="hidden md:flex items-center gap-1">
                 <a href="index.html" class="nav-link">홈</a>
@@ -1201,7 +1201,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <span class="text-xl font-black text-white mb-4 block">공간<span class="text-gold">i</span></span>
+                    <img src="assets/images/logo_spacei.png" alt="공간i" class="h-10 brightness-0 invert mb-4">
                     <p class="text-sm leading-relaxed">강남 서초 하이브랜드 빌딩 13층<br>건물주 직접 운영 비상주사무실</p>
                 </div>
                 <div>
@@ -1224,7 +1224,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         // 네비게이션 스크롤 효과
         const nav = document.getElementById('nav');
-        const logoText = document.getElementById('logoText');
+        const logoImg = document.getElementById('logoImg');
         const navPhone = document.getElementById('navPhone');
 
         const subNav = document.getElementById('subNav');
@@ -1234,8 +1234,10 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
                 nav.classList.add('nav-scrolled');
+                if (logoImg) { logoImg.classList.remove('brightness-0', 'invert'); }
             } else {
                 nav.classList.remove('nav-scrolled');
+                if (logoImg) { logoImg.classList.add('brightness-0', 'invert'); }
             }
             if (subNav) {
                 if (window.scrollY > 400) { subNav.classList.add('show'); } else { subNav.classList.remove('show'); }
