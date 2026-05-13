@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>공간i | 서울 강남 서초 월 1만원대 비상주 사무실</title>
+    <meta name="description" content="공간i - 서울 강남 서초 월 1만원대 비상주 사무실. 공간 소유주가 직접 운영. 5월 선착순 20명 특별 프로모션.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#1B2A4A', light: '#2A3F6A', dark: '#111D35' },
+                        gold: { DEFAULT: '#C8A96E', light: '#D4BC8A', dark: '#B08D4A' },
+                    },
+                    fontFamily: { sans: ['Noto Sans KR', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+
+        /* 스크롤 애니메이션 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-up-delay-1 { transition-delay: 0.15s; }
+        .fade-up-delay-2 { transition-delay: 0.3s; }
+        .fade-up-delay-3 { transition-delay: 0.45s; }
+
+        /* 히어로 */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://space-i-workspace.github.io/assets/images/p35_main.jpg') center/cover no-repeat;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(17,29,53,0.35) 0%,
+                rgba(17,29,53,0.6) 40%,
+                rgba(17,29,53,0.9) 100%
+            );
+        }
+
+        /* CTA 버튼 — 프리미엄 골드 메탈릭 */
+        .cta-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 48px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1B2A4A;
+            background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
+            border: 2px solid #B08D4A;
+            box-shadow: 0 0 0 3px rgba(200,169,110,0.25), 0 6px 24px rgba(200,169,110,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .cta-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 3px rgba(200,169,110,0.35), 0 10px 36px rgba(200,169,110,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .cta-gold svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* 3초 간편문의 */
+        .quick-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #1B2A4A;
+            background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
+            border: 2px solid #B08D4A;
+            box-shadow: 0 0 0 2px rgba(200,169,110,0.2), 0 4px 16px rgba(200,169,110,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .quick-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 2px rgba(200,169,110,0.3), 0 8px 24px rgba(200,169,110,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        /* 가격 섹션 배경 */
+        .price-section {
+            background: linear-gradient(135deg, #111D35 0%, #1B2A4A 50%, #2A3F6A 100%);
+        }
+
+        /* 구분선 */
+        .gold-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #C8A96E, #B08D4A);
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        /* 체크 아이콘 */
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .check-icon {
+            width: 36px;
+            height: 36px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* POINT 카드 */
+        .point-tag {
+            background: #2D5016;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+        .point-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .point-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(27,42,74,0.12);
+            border-color: rgba(200,169,110,0.3);
+        }
+        .point-card .img-wrap {
+            overflow: hidden;
+        }
+        .point-card img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .point-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 프로세스 아이콘 박스 */
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(27,42,74,0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+
+        /* 스플릿 섹션 (이미지+텍스트 반반) */
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+        .split-section .story-img { overflow: hidden; }
+        .split-section .story-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+        .split-section .story-img:hover img { transform: scale(1.05); }
+
+        /* 풀 이미지 오버레이 섹션 */
+        .photo-section { position: relative; overflow: hidden; }
+        .photo-section-bg { position: absolute; inset: 0; }
+        .photo-section-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-section-overlay { position: absolute; inset: 0; }
+
+        /* 태그 알약 */
+        .tag-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; }
+
+        /* FAQ */
+        .faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: box-shadow 0.3s ease; }
+        .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; font-size: 1.2rem; font-weight: 600; color: #1B2A4A; text-align: left; font-family: inherit; gap: 1rem; }
+        .faq-question:hover { background: rgba(27,42,74,0.02); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 1.5rem; }
+        .faq-answer p { color: #6b7280; font-size: 1.1rem; line-height: 1.7; }
+        .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        /* 비교표 */
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+        .compare-table th, .compare-table td { padding: 20px 24px; text-align: center; font-size: 1.25rem; font-weight: 600; }
+        .compare-table thead th { background: #1B2A4A; color: white; font-weight: 800; font-size: 1.4rem; }
+        .compare-table thead th:first-child { background: #2A3F6A; border-radius: 12px 0 0 0; }
+        .compare-table thead th:last-child { background: linear-gradient(135deg, #C8A96E, #B08D4A); color: #1B2A4A; font-size: 1.6rem; border-radius: 0 12px 0 0; position: relative; }
+        .compare-table tbody tr { border-bottom: 1px solid #e2e8f0; }
+        .compare-table tbody tr:hover { background: #f8fafc; }
+        .compare-table tbody td:first-child { font-weight: 700; color: #1B2A4A; text-align: left; font-size: 1.25rem; }
+        .compare-table tbody td:last-child { color: #C8A96E; font-weight: 800; font-size: 1.25rem; position: relative; }
+        .compare-table tbody td { border-bottom: 1px solid #e2e8f0; }
+        .compare-table thead th:last-child { border-top: 3px solid #ef4444; border-left: 3px solid #ef4444; border-right: 3px solid #ef4444; animation: pulseGlow 2s ease-in-out infinite; }
+        .compare-table tbody td:last-child { border-left: 3px solid #ef4444; border-right: 3px solid #ef4444; background: rgba(239,68,68,0.03); }
+        .compare-table tbody tr:last-child td:last-child { border-bottom: 3px solid #ef4444; }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 -4px 12px rgba(239,68,68,0.15), 4px 0 12px rgba(239,68,68,0.15), -4px 0 12px rgba(239,68,68,0.15); }
+            50% { box-shadow: 0 -4px 24px rgba(239,68,68,0.4), 4px 0 24px rgba(239,68,68,0.4), -4px 0 24px rgba(239,68,68,0.4); }
+        }
+
+        /* 통계 */
+        .stat-number { font-size: 2.5rem; font-weight: 900; line-height: 1; }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .point-grid { grid-template-columns: 1fr !important; }
+            .service-split { flex-direction: column !important; gap: 2rem !important; }
+            .split-section { grid-template-columns: 1fr; min-height: auto; }
+            .hero-section { min-height: 100svh; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <!-- 카페24 상단 메뉴 바 -->
+    <div class="bg-navy-dark text-white/80 text-sm border-b border-white/10 relative z-[60]">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-center gap-6 md:gap-10 py-2.5">
+            <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="hover:text-gold transition-colors duration-200 font-medium whitespace-nowrap">투어 신청</a>
+            <span class="text-white/20">|</span>
+            <a href="https://spaceicowork.cafe24.com/product/%EC%84%9C%EC%9A%B8-%EA%B0%95%EB%82%A8-%EC%84%9C%EC%B4%88-%EB%B9%84%EC%83%81%EC%A3%BC%EC%82%AC%EB%AC%B4%EC%8B%A4-1%EC%9D%B8-%EC%82%AC%EC%97%85%EC%9E%90-%EA%B0%9C%EC%9D%B8-%EB%B2%95%EC%9D%B8-%EC%82%AC%EC%97%85%EC%9E%90%EB%93%B1%EB%A1%9D/35/category/1/display/2/?icid=MAIN.product_listmain_1" target="_blank" rel="noopener" class="hover:text-gold transition-colors duration-200 font-medium whitespace-nowrap">비상주사무실 결제하기</a>
+            <span class="text-white/20">|</span>
+            <a href="https://spaceicowork.cafe24.com/board/%EC%83%81%ED%92%88%EB%A6%AC%EB%B7%B0/4/" target="_blank" rel="noopener" class="hover:text-gold transition-colors duration-200 font-medium whitespace-nowrap">사용자 후기</a>
+        </div>
+    </div>
+
+    <!-- 3초 간편문의 (고정 버튼) -->
+    <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="quick-btn">
+        3초 간편문의
+    </a>
+
+    <!-- ===== 섹션 1: 히어로 ===== -->
+    <section class="hero-section">
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <p class="text-white/60 text-xl md:text-2xl mb-6 tracking-wide fade-up">
+                <span class="font-bold text-white/80">공간 i</span> 사업자 고정비 세이브 프로젝트
+            </p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.15] mb-2 fade-up fade-up-delay-1" style="text-shadow: 0 2px 30px rgba(0,0,0,0.3);">
+                서울 강남 서초
+            </h1>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.15] fade-up fade-up-delay-1" style="text-shadow: 0 2px 30px rgba(0,0,0,0.3);">
+                월 <span class="text-gold">1만원대</span>
+            </h1>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.15] mb-5 fade-up fade-up-delay-1" style="text-shadow: 0 2px 30px rgba(0,0,0,0.3);">
+                비상주 사무실
+            </h1>
+            <p class="text-white/40 text-base md:text-lg mb-12 fade-up fade-up-delay-2">*개인사업자 기준</p>
+            <div class="fade-up fade-up-delay-3">
+                <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="cta-gold text-xl md:text-2xl">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    5월 한정 프로모션 문의하기
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <svg class="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 2: 가격 프로모션 ===== -->
+    <section class="price-section py-24 md:py-32 px-6 relative overflow-hidden">
+        <!-- 배경 장식 원형 -->
+        <div class="absolute top-20 -left-32 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 -right-32 w-80 h-80 bg-gold/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+            <!-- 상단: 가격 의문 텍스트 -->
+            <div class="fade-up mb-6">
+                <p class="text-white/50 text-2xl md:text-3xl mb-1">1만원대라고 해놓고</p>
+                <p class="text-white text-3xl md:text-5xl font-black">
+                    <span class="relative inline-block">
+                        19900원
+                        <span class="absolute left-[-6px] right-[-6px] top-1/2 h-[3px] bg-red-500 -rotate-[8deg]"></span>
+                    </span>
+                    <span class="text-white/50"> ?</span>
+                </p>
+            </div>
+
+            <!-- 사람 일러스트 이미지 (청구서 포함) -->
+            <div class="fade-up mb-4">
+                <img src="https://space-i-workspace.github.io/assets/images/illust_worried_man.png" alt="숨겨진 추가 비용에 고민하는 사업자" class="max-w-sm md:max-w-md w-full mx-auto" loading="lazy">
+            </div>
+
+            <!-- 골드 V 구분선 (양쪽 라인) -->
+            <div class="flex items-start w-full mb-14 fade-up">
+                <div class="flex-1 h-[2px] mt-[1px]" style="background: linear-gradient(90deg, transparent 0%, #C8A96E 30%, #C8A96E 100%);"></div>
+                <svg width="48" height="28" viewBox="0 0 48 28" fill="none" class="flex-shrink-0 -mx-px"><path d="M0 1L24 25L48 1" stroke="#C8A96E" stroke-width="2.5" stroke-linejoin="round"/></svg>
+                <div class="flex-1 h-[2px] mt-[1px]" style="background: linear-gradient(90deg, #C8A96E 0%, #C8A96E 70%, transparent 100%);"></div>
+            </div>
+
+            <!-- 프로모션 핵심 영역 -->
+            <div class="fade-up relative mb-16">
+                <!-- 반짝이 장식 -->
+                <div class="absolute top-0 left-[10%] text-gold/40 text-lg">&#10022;</div>
+                <div class="absolute top-8 right-[12%] text-gold/30 text-sm">&#10022;</div>
+                <div class="absolute bottom-4 left-[20%] text-gold/20 text-xs">&#10022;</div>
+                <div class="absolute top-16 right-[25%] text-gold/25 text-base">&#10022;</div>
+
+                <!-- 메인 타이틀 + 사람 아이콘 -->
+                <div class="flex items-center justify-center gap-4 md:gap-6 mb-10">
+                    <h2 class="text-3xl md:text-5xl font-black text-white">공간 i 5월 선착순 <span class="text-gold">20명</span></h2>
+                    <svg class="w-12 h-12 md:w-16 md:h-16 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+
+                <!-- 골드 빛줄기 효과 -->
+                <div class="flex justify-center mb-8">
+                    <div class="w-1 h-1 bg-gold rounded-full shadow-[0_0_8px_3px_rgba(200,169,110,0.5)]"></div>
+                </div>
+
+                <!-- 12개월 계약 / 3개월 무료 카드 2개 -->
+                <div class="flex flex-col sm:flex-row items-stretch justify-center gap-0 max-w-2xl mx-auto">
+                    <div class="flex-1 flex items-center justify-center gap-4 bg-white/[0.04] border border-white/10 px-8 py-7 sm:rounded-l-2xl sm:rounded-r-none rounded-t-2xl sm:rounded-t-none sm:rounded-tl-2xl border-r-0 sm:border-r-0 border-b-0 sm:border-b">
+                        <svg class="w-10 h-10 text-white/50 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l2 2 4-4"/></svg>
+                        <p class="text-white text-xl md:text-2xl font-bold">12개월 계약시</p>
+                    </div>
+                    <div class="w-px bg-white/10 hidden sm:block"></div>
+                    <div class="h-px bg-white/10 sm:hidden"></div>
+                    <div class="flex-1 flex items-center justify-center gap-4 bg-white/[0.04] border border-white/10 px-8 py-7 sm:rounded-r-2xl sm:rounded-l-none rounded-b-2xl sm:rounded-b-none sm:rounded-br-2xl border-l-0 sm:border-l-0 border-t-0 sm:border-t">
+                        <svg class="w-10 h-10 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                        <p class="text-gold text-xl md:text-2xl font-bold">3개월 무료 제공</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 최종 가격 영역 -->
+            <div class="fade-up">
+                <p class="text-white/40 text-lg md:text-xl mb-4 tracking-[0.2em]">비교할 필요가 없는 가격</p>
+                <p class="text-white/70 text-2xl md:text-3xl font-semibold mb-3">최종 혜택가</p>
+                <p class="text-6xl md:text-8xl font-black text-white mb-6">
+                    월 <span class="text-gold">16,867</span>원
+                </p>
+                <!-- 가격 비교 뱃지 -->
+                <div class="flex items-center justify-center gap-3 mb-12 flex-wrap">
+                    <span class="inline-flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/60 text-sm px-4 py-2 rounded-full">
+                        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        당일 사업자 등록
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/60 text-sm px-4 py-2 rounded-full">
+                        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        건물주 직접 운영
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/[0.06] border border-white/10 text-white/60 text-sm px-4 py-2 rounded-full">
+                        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        비대면 계약
+                    </span>
+                </div>
+            </div>
+
+            <div class="fade-up">
+                <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="cta-gold text-xl md:text-2xl">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    선착순 리스트에 문의 남기기
+                </a>
+            </div>
+
+            <!-- 업무협약 안내 -->
+            <div class="fade-up mt-20">
+                <div class="flex items-center justify-center gap-4 mb-14">
+                    <div class="flex-1 h-[1px] bg-gradient-to-r from-transparent to-gold/30"></div>
+                    <svg class="w-5 h-5 text-gold/50" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    <div class="flex-1 h-[1px] bg-gradient-to-l from-transparent to-gold/30"></div>
+                </div>
+                <p class="text-center text-white/50 text-lg md:text-xl mb-2">중소벤처기업부 협약 공식 엑셀러레이팅존</p>
+                <p class="text-center text-white text-2xl md:text-3xl font-bold leading-relaxed mb-12">
+                    <span class="text-gold">공간 i</span>가 첫계약 사업자의 고정비를 지원해드립니다.
+                </p>
+                <div class="max-w-lg mx-auto rounded-xl overflow-hidden shadow-2xl" style="border: 1.5px solid rgba(200,169,110,0.3);">
+                    <img src="https://space-i-workspace.github.io/assets/images/corebiz_nameplate.png" alt="COREBiz 한국중소기업발전협회 x 공간i 업무협약 명판" class="w-full" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 3: 신뢰 해소 1 — 소유주 직영 ===== -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #0F1A2E 0%, #1B2A4A 40%, #1B2A4A 100%);">
+        <!-- 건물 배경 이미지 (상단에만) -->
+        <div class="absolute top-0 left-0 right-0 h-[45%] opacity-40">
+            <img src="https://space-i-workspace.github.io/assets/images/detail/d16_hall3.jpg" alt="" class="w-full h-full object-cover" aria-hidden="true">
+        </div>
+        <div class="absolute top-0 left-0 right-0 h-[45%] bg-gradient-to-b from-[#0F1A2E]/40 via-[#1B2A4A]/50 to-[#1B2A4A]"></div>
+
+        <div class="relative z-10 pt-24 md:pt-32 pb-28 md:pb-36 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <!-- 비상주사무실 경고 헤더 -->
+                <div class="fade-up mb-20">
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-4">
+                        비상주사무실,<br><span class="text-gold">아무데나</span> 하면 안 됩니다
+                    </h2>
+                    <p class="text-white/50 text-lg md:text-xl max-w-2xl mx-auto">
+                        싸다고 아무 곳이나 계약했다가 어느 날 갑자기 사무실이 사라진다면?
+                    </p>
+                </div>
+
+                <!-- 큰따옴표 + 싸도 너무 싼데? (양쪽 골드 라인) -->
+                <div class="fade-up mb-16 relative">
+                    <!-- 양쪽 골드 장식 라인 -->
+                    <div class="absolute top-1/2 left-0 w-[20%] md:w-[28%] h-[1px] bg-gradient-to-r from-transparent to-gold/50"></div>
+                    <div class="absolute top-1/2 right-0 w-[20%] md:w-[28%] h-[1px] bg-gradient-to-l from-transparent to-gold/50"></div>
+
+                    <p class="text-gold/50 text-5xl md:text-6xl font-black mb-4">"</p>
+                    <p class="text-gold-light text-3xl md:text-4xl font-bold mb-1">싸도</p>
+                    <p class="text-gold-light text-3xl md:text-4xl font-bold">너무 싼데?</p>
+                </div>
+
+                <!-- 1. 저렴하면, 불안하시죠? (양쪽 골드 라인) -->
+                <div class="fade-up mb-16 relative">
+                    <div class="absolute top-1/2 left-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-r from-transparent to-gold/50"></div>
+                    <div class="absolute top-1/2 right-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-l from-transparent to-gold/50"></div>
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight whitespace-nowrap"><span class="text-gold">1.</span> 저렴하면, 불안하시죠?</h2>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 3-2: 소유주 직영 증빙 ===== -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #1B2A4A 0%, #1B2A4A 100%);">
+        <div class="relative z-10 pt-24 md:pt-32 pb-28 md:pb-36 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <!-- 방패 + 카드 통합 (방패가 카드 위에 걸침) -->
+                <div class="fade-up mb-20 relative max-w-2xl mx-auto">
+                    <!-- 방패 아이콘 (카드 위로 걸침) -->
+                    <div class="relative z-20 flex justify-center mb-[-36px] md:mb-[-42px]">
+                        <div class="relative" style="filter: drop-shadow(0 0 12px rgba(200,169,110,0.3));">
+                            <svg class="w-16 h-20 md:w-20 md:h-24" viewBox="0 0 80 96" fill="none">
+                                <defs>
+                                    <linearGradient id="shieldBorder" x1="0" y1="0" x2="80" y2="96" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#E8D49A"/>
+                                        <stop offset="30%" stop-color="#C8A96E"/>
+                                        <stop offset="60%" stop-color="#B08D4A"/>
+                                        <stop offset="100%" stop-color="#D4BC8A"/>
+                                    </linearGradient>
+                                    <linearGradient id="shieldFill" x1="40" y1="4" x2="40" y2="90" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#1B2A4A"/>
+                                        <stop offset="100%" stop-color="#111D35"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M40 4L8 20V44C8 68 40 90 40 90S72 68 72 44V20L40 4Z" fill="url(#shieldFill)" stroke="url(#shieldBorder)" stroke-width="3"/>
+                                <path d="M40 8L12 22V44C12 66 40 86 40 86S68 66 68 44V22L40 8Z" fill="none" stroke="rgba(200,169,110,0.15)" stroke-width="0.5"/>
+                                <path d="M30 48L37 55L52 40" stroke="#C8A96E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- 소유주 직영 텍스트 카드 -->
+                    <div class="relative rounded-2xl overflow-hidden" style="border: 1.5px solid rgba(255,255,255,0.18);">
+                        <img src="https://space-i-workspace.github.io/assets/images/p35_extra1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30" aria-hidden="true">
+                        <div class="absolute inset-0" style="background: rgba(15,20,35,0.75);"></div>
+                        <div class="relative z-10 px-8 pt-16 pb-12 md:px-14 md:pt-20 md:pb-16">
+                            <div class="text-2xl md:text-3xl text-white/80 leading-[1.8]">
+                                <p class="mb-1">공간 i는</p>
+                                <p class="mb-1">전대차 계약이 아닙니다</p>
+                                <p class="mt-4">실제 <span class="font-black text-gold text-3xl md:text-4xl">공간 소유주가 직접 운영</span>하는</p>
+                                <p>비상주사무실입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 상주매니저 ===== -->
+    <section class="split-section">
+        <div class="story-img min-h-[350px] md:min-h-0 relative" style="overflow: visible;">
+            <img src="https://space-i-workspace.github.io/assets/images/detail/d09_manager.png" alt="공간i 상주매니저" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute top-8 left-6 z-20 max-w-[340px] md:max-w-[400px] fade-up hidden md:block">
+                <div class="relative bg-white rounded-2xl shadow-2xl px-7 py-6">
+                    <p class="text-xs text-emerald-500 font-bold mb-2 tracking-widest uppercase">실제 회원 사례</p>
+                    <p class="text-navy font-black text-xl md:text-2xl leading-relaxed">"세무서에서 갑자기 실사 나왔는데, 매니저님이 바로 대응해주셔서 문제 없이 넘어갔습니다."</p>
+                    <div class="absolute top-1/2 -right-3 w-6 h-6 bg-white transform rotate-45 -translate-y-1/2" style="box-shadow: 3px -3px 3px rgba(0,0,0,0.04);"></div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center bg-white">
+            <div class="px-8 md:px-16 py-16 max-w-xl fade-up">
+                <span class="tag-pill bg-navy/10 text-navy border border-navy/20 mb-6">상주매니저</span>
+                <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight mb-4">
+                    사람이 있으니까<br><span class="text-gold">안심됩니다</span>
+                </h2>
+                <p class="text-slate-500 text-lg leading-relaxed mb-8">
+                    공간i에는 전담 매니저가 상주합니다.<br>
+                    우편물 관리부터 세무서 실사 대응, 방문 고객 안내까지<br>
+                    비상주라도 사무실이 비어 있지 않습니다.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-5">
+                        <span class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">&#10003;</span>
+                        <span class="text-slate-700 font-bold text-lg md:text-xl">우편물 수령·보관·전달</span>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <span class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">&#10003;</span>
+                        <span class="text-slate-700 font-bold text-lg md:text-xl">세무서·공공기관 실사 즉시 대응</span>
+                    </div>
+                    <div class="flex items-center gap-5">
+                        <span class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">&#10003;</span>
+                        <span class="text-slate-700 font-bold text-lg md:text-xl">방문 고객 안내·미팅룸 세팅</span>
+                    </div>
+                </div>
+                <div class="mt-10 p-5 bg-slate-50 rounded-xl border border-slate-100 md:hidden">
+                    <p class="text-xs text-emerald-500 font-bold mb-2">실제 회원 사례</p>
+                    <p class="text-navy font-bold text-lg leading-relaxed">"세무서에서 갑자기 실사 나왔는데, 매니저님이 바로 대응해주셔서 문제 없이 넘어갔습니다."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 3-3: 증빙 카드 ===== -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #1B2A4A 0%, #1B2A4A 100%);">
+        <div class="relative z-10 pt-24 md:pt-32 pb-28 md:pb-36 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <!-- 증빙 카드 영역 -->
+                <div class="fade-up">
+                    <div class="rounded-2xl p-8 md:p-12 max-w-3xl mx-auto" style="background: rgba(255,255,255,0.03); border: 1.5px solid rgba(200,169,110,0.35);">
+
+                        <!-- 증빙 헤더 -->
+                        <div class="flex items-center justify-center gap-3 mb-2">
+                            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <p class="text-xl md:text-2xl text-white/70">실제 <span class="text-gold font-black">공간 소유주가 직접 운영</span>하여</p>
+                        </div>
+                        <p class="text-xl md:text-2xl text-white/70 mb-10">안심하고 이용하실 수 있습니다.</p>
+
+                        <!-- 문서 비교 카드 -->
+                        <div class="flex items-stretch justify-center gap-0 md:gap-0 mb-4 relative">
+                            <!-- 임대차계약서 -->
+                            <div class="flex-1 max-w-[320px]">
+                                <div class="bg-white rounded-xl p-6 md:p-8 h-full text-center relative overflow-hidden">
+                                    <div class="flex items-center justify-center gap-3 mb-5">
+                                        <svg class="w-7 h-7 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                        <p class="text-navy font-black text-xl md:text-2xl">임대차계약서</p>
+                                    </div>
+                                    <!-- 문서 모의 라인 -->
+                                    <div class="space-y-2 mb-6">
+                                        <div class="h-2 bg-slate-100 rounded w-full"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-4/5 mx-auto"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-full"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-3/5 mx-auto"></div>
+                                    </div>
+                                    <!-- 대표자 하이라이트 -->
+                                    <div class="rounded-lg px-4 py-3 mb-3" style="background: #FFF8E1; border: 1px solid #FFE082;">
+                                        <p class="text-sm font-bold text-slate-700">계약서상 대표자</p>
+                                    </div>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <div class="h-2 bg-slate-100 rounded w-2/3"></div>
+                                        <p class="text-xs text-slate-400">(대표자)</p>
+                                    </div>
+                                    <!-- 일치 도장 -->
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%]">
+                                        <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-[4px] border-red-500 flex items-center justify-center bg-white/80" style="transform: rotate(-15deg);">
+                                            <span class="text-red-500 font-black text-2xl md:text-3xl">일치</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- = 기호 (골드 원형) -->
+                            <div class="flex items-center justify-center px-3 md:px-5 z-10">
+                                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #C8A96E, #B08D4A); border: 2px solid #D4BC8A;">
+                                    <span class="text-white font-black text-2xl md:text-3xl">=</span>
+                                </div>
+                            </div>
+
+                            <!-- 사업자등록증 -->
+                            <div class="flex-1 max-w-[320px]">
+                                <div class="bg-white rounded-xl p-6 md:p-8 h-full text-center relative overflow-hidden">
+                                    <div class="flex items-center justify-center gap-3 mb-5">
+                                        <svg class="w-7 h-7 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0"/></svg>
+                                        <p class="text-navy font-black text-xl md:text-2xl">사업자등록증</p>
+                                    </div>
+                                    <!-- 문서 모의 라인 -->
+                                    <div class="space-y-2 mb-6">
+                                        <div class="h-2 bg-slate-100 rounded w-full"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-3/4 mx-auto"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-full"></div>
+                                        <div class="h-2 bg-slate-100 rounded w-2/3 mx-auto"></div>
+                                    </div>
+                                    <!-- 대표자 하이라이트 -->
+                                    <div class="rounded-lg px-4 py-3 mb-3" style="background: #FFF8E1; border: 1px solid #FFE082;">
+                                        <p class="text-sm font-bold text-slate-700">사업자상 대표자</p>
+                                    </div>
+                                    <div class="flex items-center justify-center gap-2">
+                                        <div class="h-2 bg-slate-100 rounded w-2/3"></div>
+                                        <p class="text-xs text-slate-400">(대표자)</p>
+                                    </div>
+                                    <!-- 일치 도장 -->
+                                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%]">
+                                        <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-[4px] border-red-500 flex items-center justify-center bg-white/80" style="transform: rotate(10deg);">
+                                            <span class="text-red-500 font-black text-2xl md:text-3xl">일치</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative -mt-6 z-20 mx-auto max-w-2xl">
+                            <div class="rounded-full py-4 px-8 text-center" style="background: linear-gradient(135deg, #C8A96E, #B08D4A); border: 2px solid #D4BC8A; box-shadow: 0 8px 30px rgba(200,169,110,0.3);">
+                                <p class="text-white font-black text-lg md:text-xl tracking-wide">계약서상 대표자와 사업자상 대표자 동일</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ===== 섹션 4: 신뢰 해소 2 — 서비스 품질 ===== -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #1B2A4A 0%, #1B2A4A 60%, #111D35 100%);">
+        <div class="relative z-10 pt-28 pb-16 md:pt-36 md:pb-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <!-- 2. 저렴하니까 서비스가 별로? (1. 과 동일한 넘버링 스타일) -->
+                <div class="fade-up mb-20 relative">
+                    <div class="absolute top-1/2 left-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-r from-transparent to-gold/50"></div>
+                    <div class="absolute top-1/2 right-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-l from-transparent to-gold/50"></div>
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight whitespace-nowrap"><span class="text-gold">2.</span> 저렴하니까 서비스가 별로?</h2>
+                </div>
+
+                <!-- 서비스 요약 (이미지 디자인 반영: 좌측 골드텍스트 + 우측 체크카드) -->
+                <div class="service-split flex flex-col md:flex-row items-center justify-center gap-14 fade-up">
+                    <div class="text-left">
+                        <p class="text-white/70 text-2xl md:text-3xl mb-2">이 정도는 기본!</p>
+                        <p class="text-white text-2xl md:text-3xl mb-1">공간 i는</p>
+                        <p class="font-black text-6xl md:text-8xl leading-[1.1]" style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">전부</p>
+                        <p><span class="font-black text-6xl md:text-8xl leading-[1.1]" style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">포함</span><span class="text-white/80 text-2xl md:text-3xl">입니다.</span></p>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white/[0.08] border border-white/20 rounded-2xl px-14 py-12 space-y-7">
+                            <div class="check-item text-white"><span class="check-icon">&#10003;</span> 무료 우편관리</div>
+                            <div class="check-item text-white"><span class="check-icon">&#10003;</span> 실사지원</div>
+                            <div class="check-item text-white"><span class="check-icon">&#10003;</span> 무료 미팅룸</div>
+                            <div class="check-item text-white"><span class="check-icon">&#10003;</span> 무료 주차</div>
+                            <div class="check-item text-white"><span class="check-icon">&#10003;</span> 무료 오픈테이블</div>
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 text-gold/30">
+                            <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 4-2: 혜택 캐러셀 ===== -->
+    <section class="pt-0 pb-20 md:pb-28 px-6 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="benefit-carousel relative fade-up">
+                <div class="carousel-track-wrap overflow-hidden rounded-2xl shadow-lg">
+                    <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+                        <div class="carousel-slide flex-shrink-0 w-full"><img src="https://space-i-workspace.github.io/assets/images/point_01_mail.png" alt="POINT 01 무료우편관리" class="w-full" loading="lazy"></div>
+                        <div class="carousel-slide flex-shrink-0 w-full"><img src="https://space-i-workspace.github.io/assets/images/point_02_inspection.png" alt="POINT 02 실사지원" class="w-full" loading="lazy"></div>
+                        <div class="carousel-slide flex-shrink-0 w-full"><img src="https://space-i-workspace.github.io/assets/images/point_03_meeting.png" alt="POINT 03 무료미팅룸" class="w-full" loading="lazy"></div>
+                        <div class="carousel-slide flex-shrink-0 w-full"><img src="https://space-i-workspace.github.io/assets/images/point_04_parking.png" alt="POINT 04 무료주차" class="w-full" loading="lazy"></div>
+                        <div class="carousel-slide flex-shrink-0 w-full"><img src="https://space-i-workspace.github.io/assets/images/point_05_opentable.png" alt="POINT 05 무료 오픈테이블" class="w-full" loading="lazy"></div>
+                    </div>
+                </div>
+                <!-- 좌우 화살표 -->
+                <button class="carousel-prev absolute top-1/2 -translate-y-1/2 -left-8 md:-left-20 w-16 h-16 md:w-20 md:h-20 rounded-full bg-white shadow-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 z-10 border-2 border-slate-200 hover:border-navy">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button class="carousel-next absolute top-1/2 -translate-y-1/2 -right-8 md:-right-20 w-16 h-16 md:w-20 md:h-20 rounded-full bg-white shadow-2xl flex items-center justify-center hover:bg-navy hover:text-white transition-all duration-300 z-10 border-2 border-slate-200 hover:border-navy">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <!-- 인디케이터 -->
+                <div class="carousel-dots flex justify-center gap-2.5 mt-6">
+                    <button class="w-3 h-3 rounded-full bg-navy transition-all duration-300" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-slate-300 transition-all duration-300" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-slate-300 transition-all duration-300" data-index="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-slate-300 transition-all duration-300" data-index="3"></button>
+                    <button class="w-3 h-3 rounded-full bg-slate-300 transition-all duration-300" data-index="4"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 5: 신뢰 해소 3 — 소통/절차 ===== -->
+    <section class="relative overflow-hidden" style="background: linear-gradient(180deg, #111D35 0%, #1B2A4A 40%, #1B2A4A 100%);">
+        <!-- 장식: 헤드셋 (우상단) -->
+        <div class="absolute top-16 right-[5%] md:right-[12%] text-white/[0.07]">
+            <svg class="w-28 h-28 md:w-40 md:h-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 18v-6a9 9 0 0118 0v6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+        </div>
+        <!-- 장식: 스톱워치 (우하단) -->
+        <div class="absolute bottom-32 right-[8%] md:right-[15%] text-white/[0.07]">
+            <svg class="w-24 h-24 md:w-32 md:h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" stroke-width="1"/><path stroke-linecap="round" stroke-width="1.5" d="M12 9v4l2.5 1.5"/><path stroke-linecap="round" stroke-width="1" d="M10 2h4M12 2v2"/><path stroke-linecap="round" stroke-width="1" d="M18.4 5.6l1-1"/></svg>
+        </div>
+
+        <div class="relative z-10 py-28 md:py-36 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+
+                <!-- 3. 타이틀 (1. 2. 과 동일한 넘버링) -->
+                <div class="fade-up mb-6 relative">
+                    <div class="absolute top-1/2 left-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-r from-transparent to-gold/50"></div>
+                    <div class="absolute top-1/2 right-0 w-[12%] md:w-[18%] h-[1px] bg-gradient-to-l from-transparent to-gold/50"></div>
+                    <p class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight"><span class="text-gold">3.</span> 저렴하니까</p>
+                </div>
+                <p class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-16 fade-up">소통이 별로?</p>
+
+                <!-- 로켓 + 신속 강조 -->
+                <div class="fade-up mb-10">
+                    <span class="text-7xl md:text-8xl" role="img" aria-label="로켓">🚀</span>
+                    <p class="text-gold font-black text-2xl md:text-3xl mt-4 tracking-wide">신속 상담 · 즉시 계약</p>
+                </div>
+
+                <!-- 3단계 프로세스 카드 -->
+                <div class="flex flex-col items-center gap-4 mb-16 fade-up max-w-lg mx-auto">
+                    <!-- 상담 -->
+                    <div class="w-full flex items-center rounded-2xl px-8 py-6" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style="border: 2px solid #C8A96E;">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 18v-6a9 9 0 0118 0v6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+                        </div>
+                        <p class="text-white text-2xl md:text-3xl font-black flex-1 text-center pr-16">상담</p>
+                    </div>
+
+                    <span class="text-gold text-2xl">&#9660;</span>
+
+                    <!-- 비대면 / 대면 계약 -->
+                    <div class="w-full flex items-center rounded-2xl px-8 py-6" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style="border: 2px solid #C8A96E;">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.5 11.5l-3 3-1.5-1.5"/></svg>
+                        </div>
+                        <p class="text-white text-2xl md:text-3xl font-black flex-1 text-center pr-16">비대면 / 대면 계약</p>
+                    </div>
+
+                    <span class="text-gold text-2xl">&#9660;</span>
+
+                    <!-- 당일 사업자 등록 -->
+                    <div class="w-full flex items-center rounded-2xl px-8 py-6" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style="border: 2px solid #C8A96E;">
+                            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <p class="text-white text-2xl md:text-3xl font-black flex-1 text-center pr-16">당일 사업자 등록</p>
+                    </div>
+                </div>
+
+                <!-- 10분이면 충분합니다 -->
+                <div class="fade-up mb-16">
+                    <p class="mb-2">
+                        <span class="text-7xl md:text-9xl font-black leading-none" style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">10분</span>
+                    </p>
+                    <p class="text-3xl md:text-4xl font-bold text-white/80">이면 충분합니다.</p>
+                </div>
+
+                <!-- CTA -->
+                <div class="fade-up">
+                    <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="cta-gold text-xl md:text-2xl">
+                        지금 바로 3개월 무료혜택 받기
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 회원 후기 ===== -->
+    <section class="py-20 md:py-28 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-4">회원님들이 직접 말하는 <span class="text-gold">공간i</span></h2>
+                <p class="text-slate-500 text-xl md:text-2xl">실제 입주 회원님들의 생생한 후기입니다</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="fade-up">
+                    <div class="relative bg-white rounded-2xl px-8 py-7 shadow-lg">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xl mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-slate-700 leading-relaxed text-lg font-medium">"건물주 직영이라 폐업 걱정 없이 안심하고 사용합니다. 매니저님도 항상 친절하시고, 우편물 관리도 완벽해요."</p>
+                        <div class="absolute -bottom-3 left-10 w-6 h-6 bg-white transform rotate-45" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.04);"></div>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 ml-4">
+                        <div class="w-11 h-11 bg-navy rounded-full flex items-center justify-center text-white font-bold text-sm">K</div>
+                        <div><p class="font-semibold text-navy text-base">김** 대표</p><p class="text-sm text-slate-400">IT 스타트업 · 2년 이용</p></div>
+                    </div>
+                </div>
+                <div class="fade-up fade-up-delay-1">
+                    <div class="relative bg-white rounded-2xl px-8 py-7 shadow-lg">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xl mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-slate-700 leading-relaxed text-lg font-medium">"세무서 실사가 나왔을 때 매니저님이 바로 대응해주셔서 아무 문제 없었습니다. 이런 곳이 없었어요."</p>
+                        <div class="absolute -bottom-3 left-10 w-6 h-6 bg-white transform rotate-45" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.04);"></div>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 ml-4">
+                        <div class="w-11 h-11 bg-gold rounded-full flex items-center justify-center text-white font-bold text-sm">P</div>
+                        <div><p class="font-semibold text-navy text-base">박** 대표</p><p class="text-sm text-slate-400">무역업 · 1년 이용</p></div>
+                    </div>
+                </div>
+                <div class="fade-up fade-up-delay-2">
+                    <div class="relative bg-white rounded-2xl px-8 py-7 shadow-lg">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xl mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-slate-700 leading-relaxed text-lg font-medium">"미팅룸 무료 이용이 큰 장점입니다. 고객 미팅할 때 호텔뷰에서 진행하면 신뢰감이 확 올라가요."</p>
+                        <div class="absolute -bottom-3 left-10 w-6 h-6 bg-white transform rotate-45" style="box-shadow: 3px 3px 3px rgba(0,0,0,0.04);"></div>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6 ml-4">
+                        <div class="w-11 h-11 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-sm">L</div>
+                        <div><p class="font-semibold text-navy text-base">이** 대표</p><p class="text-sm text-slate-400">컨설팅 · 3년 이용</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center fade-up">
+                    <p class="stat-number text-navy">1000<span class="text-gold">+</span></p>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">누적 입주사</p>
+                </div>
+                <div class="text-center fade-up fade-up-delay-1">
+                    <p class="stat-number text-navy">98<span class="text-gold">%</span></p>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">재계약률</p>
+                </div>
+                <div class="text-center fade-up fade-up-delay-2">
+                    <p class="stat-number text-navy">5<span class="text-gold">년</span></p>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">운영 경력</p>
+                </div>
+                <div class="text-center fade-up fade-up-delay-3">
+                    <p class="stat-number text-navy">0<span class="text-gold">건</span></p>
+                    <p class="text-slate-500 text-sm mt-2 font-medium">폐업·이전 사고</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 프리미엄 공간 + 지도 ===== -->
+    <section id="space" class="py-20 md:py-28 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-4 fade-up">프리미엄 공간을 확인하세요</h2>
+                <p class="text-slate-500 text-xl md:text-2xl fade-up">강남 서초 하이브랜드 13층, 호텔뷰 업무공간</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/f12f7187af2f551cc49a8eedde9cad3c.jpg" alt="빌딩 외관" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/a2e71ebb71a4c45165c521b113d3f065.jpg" alt="호텔뷰 전망" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/d0102d966f3fb4536a7ba1e73ffc0d28.jpg" alt="업무공간" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/62724a7586f44d5576edd4fd49f7faeb.jpg" alt="회의실" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden fade-up">
+                <div class="h-64 md:h-80 bg-slate-200 relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.5!2d127.03!3d37.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI4JzEyLjAiTiAxMjfCsDAyJzAwLjAiRQ!5e0!3m2!1sko!2skr!4v1"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0"></iframe>
+                </div>
+                <div class="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-navy mb-1">오시는 길</h3>
+                        <p class="text-slate-500 text-lg">서울특별시 서초구 매헌로 16길 하이브랜드 13층 1313호</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="https://naver.me/xf5MEfUE" target="_blank" rel="noopener" class="px-4 py-2 bg-emerald-500 text-white rounded-lg text-base font-medium hover:bg-emerald-600 transition-colors">네이버 지도</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 9: 비교표 ===== -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-4">비교하면 <span class="text-gold">답이 보입니다</span></h2>
+                <p class="text-slate-500 text-xl md:text-2xl">일반 비상주사무실과 공간i, 무엇이 다를까요?</p>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 fade-up">
+                <div class="overflow-x-auto">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th class="text-left" style="min-width:160px;">비교 항목</th>
+                                <th style="min-width:140px;">일반 비상주</th>
+                                <th style="min-width:160px;">공간i</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>운영 주체</td><td class="text-slate-500">위탁 운영</td><td>건물주 직영 &#10003;</td></tr>
+                            <tr><td>상주 매니저</td><td class="text-slate-500">없음 / 비정기</td><td>전담 매니저 상주 &#10003;</td></tr>
+                            <tr><td>폐업 위험</td><td class="text-slate-500">있음</td><td>0건 &#10003;</td></tr>
+                            <tr><td>세무서 실사 대응</td><td class="text-slate-500">불가 / 어려움</td><td>즉시 대응 &#10003;</td></tr>
+                            <tr><td>우편물 관리</td><td class="text-slate-500">방치 / 분실</td><td>수령·보관·전달 &#10003;</td></tr>
+                            <tr><td>회의실</td><td class="text-slate-500">유료 / 없음</td><td>무료 제공 &#10003;</td></tr>
+                            <tr><td>주차</td><td class="text-slate-500">불가</td><td>무료 지원 &#10003;</td></tr>
+                            <tr><td>오픈테이블</td><td class="text-slate-500">없음</td><td>무료 이용 &#10003;</td></tr>
+                            <tr><td>보증금</td><td class="text-slate-500">있음</td><td>없음 &#10003;</td></tr>
+                            <tr><td>계약 방식</td><td class="text-slate-500">대면만</td><td>비대면 OK &#10003;</td></tr>
+                            <tr><td>부가서비스</td><td class="text-slate-500">없음</td><td>크리에이터 스튜디오 등 &#10003;</td></tr>
+                            <tr><td>가격</td><td class="text-slate-500">월 3~5만원</td><td style="border-radius: 0 0 12px 0;">월 1만원대~ &#10003;</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 11: PREMIUM SPACE 히어로 ===== -->
+    <section class="photo-section" style="min-height: 600px;">
+        <div class="photo-section-bg">
+            <img src="https://space-i-workspace.github.io/assets/images/detail/d05_interior2.jpg" alt="프리미엄 업무공간" loading="lazy">
+        </div>
+        <div class="photo-section-overlay" style="background: linear-gradient(to bottom, rgba(17,29,53,0.3) 0%, rgba(17,29,53,0.6) 50%, rgba(17,29,53,0.9) 100%);"></div>
+        <div class="relative z-10 flex items-end min-h-[600px]">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 w-full">
+                <div class="max-w-2xl fade-up">
+                    <span class="tag-pill bg-gold/20 text-gold border border-gold/30 mb-6">PREMIUM SPACE</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+                        주소만 빌리는<br>시대는 <span style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">끝났습니다</span>
+                    </h2>
+                    <p class="text-white/70 text-xl leading-relaxed">
+                        공간i는 실제로 사용할 수 있는 프리미엄 공간입니다.<br>
+                        업무, 미팅, 촬영까지 — 비상주 그 이상의 가치를 경험하세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 12: VIEW ===== -->
+    <section class="split-section">
+        <div class="story-img min-h-[350px] md:min-h-0">
+            <img src="https://space-i-workspace.github.io/assets/images/img_extra1.jpg" alt="13층 전망 VIEW" loading="lazy">
+        </div>
+        <div class="flex items-center bg-white">
+            <div class="px-8 md:px-16 py-16 max-w-xl fade-up">
+                <span class="tag-pill bg-navy/10 text-navy border border-navy/20 mb-6">VIEW</span>
+                <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight mb-4">
+                    13층에서 바라본<br><span class="text-gold">세상</span>
+                </h2>
+                <p class="text-slate-500 text-xl md:text-2xl leading-relaxed">
+                    강남 서초의 파노라마 뷰가 펼쳐지는 13층.<br>
+                    탁 트인 전망이 업무 효율과 기분 모두를 올려줍니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 13: WINDOW BAR ===== -->
+    <section class="photo-section" style="min-height: 500px;">
+        <div class="photo-section-bg">
+            <img src="https://space-i-workspace.github.io/assets/images/p35_extra2.jpg" alt="윈도우 바 WINDOW BAR" loading="lazy">
+        </div>
+        <div class="photo-section-overlay" style="background: linear-gradient(to top, rgba(17,29,53,0.85) 0%, rgba(17,29,53,0.3) 40%, transparent 70%);"></div>
+        <div class="relative z-10 flex items-end min-h-[500px]">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 py-16 w-full">
+                <div class="fade-up">
+                    <span class="tag-pill bg-white/20 text-white border border-white/30 mb-4">WINDOW BAR</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight">구름 위에서 일하는 기분</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 14: FOCUS ===== -->
+    <section class="split-section">
+        <div class="flex items-center bg-white order-2 md:order-1">
+            <div class="px-8 md:px-16 py-16 max-w-xl fade-up">
+                <span class="tag-pill bg-navy/10 text-navy border border-navy/20 mb-6">FOCUS</span>
+                <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight mb-4">
+                    나만의 공간,<br><span class="text-gold">나만의 시간</span>
+                </h2>
+                <p class="text-slate-500 text-xl md:text-2xl leading-relaxed">
+                    식물로 자연스럽게 구분된 포커스 존에서<br>
+                    오롯이 집중할 수 있는 환경을 제공합니다.
+                </p>
+            </div>
+        </div>
+        <div class="story-img min-h-[350px] md:min-h-0 order-1 md:order-2">
+            <img src="https://space-i-workspace.github.io/assets/images/p35_extra3.jpg" alt="포커스 존 FOCUS" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ===== 섹션 15: PRIVATE ROOM ===== -->
+    <section class="split-section" id="rooms">
+        <div class="story-img min-h-[350px] md:min-h-0">
+            <img src="https://space-i-workspace.github.io/assets/images/room_1person.jpeg" alt="1~3인실 PRIVATE ROOM" loading="lazy">
+        </div>
+        <div class="flex items-center bg-navy">
+            <div class="px-8 md:px-16 py-16 max-w-xl fade-up">
+                <span class="tag-pill bg-gold/20 text-gold border border-gold/30 mb-6">PRIVATE ROOM</span>
+                <h2 class="text-3xl md:text-4xl font-black text-white leading-tight mb-6">
+                    완전한 독립 공간,<br><span class="text-gold">1~3인실</span>
+                </h2>
+                <p class="text-white/60 text-lg leading-relaxed mb-8">
+                    유리 도어로 분리된 개인 오피스.<br>
+                    화상회의, 전화 통화, 집중 업무까지<br>
+                    완전한 프라이버시가 보장됩니다.
+                </p>
+                <div class="space-y-3 text-base">
+                    <div class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-gold rounded-full"></span>
+                        <span class="text-white/80 font-semibold text-lg">개인 데스크 + 인체공학 의자</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-2 h-2 bg-gold rounded-full"></span>
+                        <span class="text-white/80 font-semibold text-lg">자연광 + 전망</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 16: MEETING ROOM ===== -->
+    <section class="photo-section" style="min-height: 500px;">
+        <div class="photo-section-bg">
+            <img src="https://space-i-workspace.github.io/assets/images/p35_extra4.jpg" alt="미팅룸 MEETING ROOM" loading="lazy">
+        </div>
+        <div class="photo-section-overlay" style="background: linear-gradient(to top, rgba(17,29,53,0.9) 0%, rgba(17,29,53,0.4) 40%, transparent 70%);"></div>
+        <div class="relative z-10 flex items-end min-h-[500px]">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 py-16 w-full">
+                <div class="fade-up">
+                    <span class="tag-pill bg-white/20 text-white border border-white/30 mb-4">MEETING ROOM</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-white leading-tight mb-4">아이디어가 만나는 곳</h2>
+                    <p class="text-white/70 text-xl md:text-2xl mb-6">프레젠테이션 장비를 갖춘 프리미엄 회의실을 무료로 이용하세요.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 text-white/80 rounded-full text-base font-medium border border-white/20">8인 테이블</span>
+                        <span class="px-3 py-1 bg-white/10 text-white/80 rounded-full text-base font-medium border border-white/20">대형 모니터</span>
+                        <span class="px-3 py-1 bg-white/10 text-white/80 rounded-full text-base font-medium border border-white/20">화이트보드</span>
+                        <span class="px-3 py-1 bg-white/10 text-white/80 rounded-full text-base font-medium border border-white/20">월 1회 무료</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 17: CAFE LOUNGE ===== -->
+    <section class="split-section">
+        <div class="flex items-center bg-white order-2 md:order-1">
+            <div class="px-8 md:px-16 py-16 max-w-xl fade-up">
+                <span class="tag-pill bg-navy/10 text-navy border border-navy/20 mb-6">CAFE LOUNGE</span>
+                <h2 class="text-3xl md:text-4xl font-black text-navy leading-tight mb-4">
+                    카페처럼<br><span class="text-gold">편안하게</span>
+                </h2>
+                <p class="text-slate-500 text-xl md:text-2xl leading-relaxed mb-6">
+                    입주사를 위한 전용 공간으로<br>
+                    자유롭게 업무에 활용하실 수 있습니다.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div><p class="font-bold text-navy text-lg">업무 중심 공간</p><p class="text-base text-slate-400">노트북 작업, 간단한 업무 처리에 최적화</p></div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                        </div>
+                        <div><p class="font-bold text-navy text-lg">무료 커피 제공</p><p class="text-base text-slate-400">업무 중 언제든지 이용 가능</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="story-img min-h-[350px] md:min-h-0 order-1 md:order-2">
+            <img src="https://space-i-workspace.github.io/assets/images/p35_extra6.jpg" alt="카페 라운지 CAFE LOUNGE" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ===== 섹션 18: CREATOR STUDIO ===== -->
+    <section class="py-20 md:py-28 bg-navy">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <span class="tag-pill bg-gold/20 text-gold border border-gold/30 mb-4">CREATOR STUDIO</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">크리에이터를 위한 <span style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">올인원 시설</span></h2>
+                <p class="text-white/50 text-xl md:text-2xl">사진 촬영, 영상 제작을 위한 전문 스튜디오 공간</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://space-i-workspace.github.io/assets/images/p35_extra8.jpg" alt="크리에이터 스튜디오" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up fade-up-delay-1">
+                    <img src="https://space-i-workspace.github.io/assets/images/p35_extra7.jpg" alt="촬영 장비" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white/8 backdrop-blur-sm border border-white/12 rounded-xl p-8 text-center fade-up" style="background: rgba(255,255,255,0.06);">
+                    <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><circle cx="12" cy="13" r="3"/></svg>
+                    <p class="text-white font-bold text-lg md:text-xl">포토 스튜디오</p>
+                </div>
+                <div class="bg-white/8 backdrop-blur-sm border border-white/12 rounded-xl p-8 text-center fade-up fade-up-delay-1" style="background: rgba(255,255,255,0.06);">
+                    <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    <p class="text-white font-bold text-lg md:text-xl">영상 촬영</p>
+                </div>
+                <div class="bg-white/8 backdrop-blur-sm border border-white/12 rounded-xl p-8 text-center fade-up fade-up-delay-2" style="background: rgba(255,255,255,0.06);">
+                    <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    <p class="text-white font-bold text-lg md:text-xl">조명 장비</p>
+                </div>
+                <div class="bg-white/8 backdrop-blur-sm border border-white/12 rounded-xl p-8 text-center fade-up fade-up-delay-3" style="background: rgba(255,255,255,0.06);">
+                    <svg class="w-12 h-12 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <p class="text-white font-bold text-lg md:text-xl">사전 예약제</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 섹션 19: RECEPTION ===== -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <span class="tag-pill bg-navy/10 text-navy border border-navy/20 mb-4">RECEPTION</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-4">전담 매니저가 <span class="text-gold">상주합니다</span></h2>
+                <p class="text-slate-500 text-xl md:text-2xl">방문객 안내부터 우편물 관리까지, 사무실의 얼굴이 되어드립니다</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up">
+                    <img src="https://space-i-workspace.github.io/assets/images/p35_extra5.jpg" alt="리셉션 입구" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden fade-up fade-up-delay-1">
+                    <img src="https://space-i-workspace.github.io/assets/images/detail/d19_entrance.jpg" alt="로비 입구" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DEDICATED CARE ===== -->
+    <section class="photo-section" style="min-height: 500px;">
+        <div class="photo-section-bg">
+            <img src="https://space-i-workspace.github.io/assets/images/detail/d09_manager.png" alt="전담 매니저 케어" loading="lazy">
+        </div>
+        <div class="photo-section-overlay" style="background: linear-gradient(to right, rgba(17,29,53,0.92) 0%, rgba(17,29,53,0.7) 50%, rgba(17,29,53,0.3) 100%);"></div>
+        <div class="relative z-10 flex items-center min-h-[500px]">
+            <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 w-full">
+                <div class="max-w-lg fade-up">
+                    <span class="tag-pill bg-gold/20 text-gold border border-gold/30 mb-6">DEDICATED CARE</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+                        회원님의 비즈니스를<br>함께 <span style="background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">챙깁니다</span>
+                    </h2>
+                    <p class="text-white/70 text-xl md:text-2xl leading-relaxed">
+                        단순히 주소만 빌려주는 것이 아닙니다.<br>
+                        사업 운영에 필요한 행정 업무를 전담 매니저가 직접 챙깁니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="py-20 md:py-28 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy mb-4">자주 묻는 질문</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>어떤 업종이든 사업자 등록이 가능한가요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>대부분의 업종이 등록 가능합니다. 일부 특수 업종(유흥, 숙박 등)은 제한될 수 있으니, 상담 시 업종을 말씀해 주시면 등록 가능 여부를 바로 확인해 드립니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>계약 절차는 어떻게 되나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>전화, 카카오톡 또는 방문 상담 후 바로 계약이 가능합니다. 대면·비대면 모두 지원하며, 보증금 없이 당일 계약 완료됩니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>우편물은 어떻게 받나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>전담 매니저가 우편물 수발신을 관리합니다. 우편물 도착 시 즉시 알려드리며, 방문 수령 또는 전달 서비스를 이용하실 수 있습니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>주차는 어떻게 이용하나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>하이브랜드 빌딩 지하 주차장을 무료로 이용하실 수 있습니다. 방문 전 미리 연락 주시면 편리하게 안내해 드립니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>세무서 실사에 대응할 수 있나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>네, 전담 매니저가 상주하고 있어 세무서 실사에 완벽히 대응 가능합니다. 건물주 직접 운영이기 때문에 더욱 안정적으로 대응할 수 있습니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>회의실 예약은 어떻게 하나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>전담 매니저에게 전화 또는 카카오톡으로 원하는 일시를 알려주시면 됩니다. 별도 예약비 없이 무료로 이용 가능합니다.</p></div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>계약 기간과 해지 조건은 어떻게 되나요?</span>
+                        <svg class="faq-arrow w-5 h-5 text-slate-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-answer"><p>최소 계약 기간은 상품별로 다르며, 상담 시 상세히 안내해 드립니다.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 입주기업 로고 그리드 ===== -->
+    <section class="py-20 md:py-28" style="background: linear-gradient(180deg, #111D35 0%, #1B2A4A 100%);">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <p class="text-gold font-bold text-sm tracking-widest uppercase mb-3">TRUSTED BY</p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">공간i를 선택한 기관과 기업들</h2>
+                <p class="text-white/50 text-lg">공공기관부터 글로벌 기업까지, 실제 저희 공간을 이용하는 기관들입니다</p>
+            </div>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 md:gap-4 fade-up">
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/broadcom.png" alt="BROADCOM" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">BROADCOM</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/siemens.png" alt="SIEMENS" class="w-full h-full object-cover"></div>
+                    <span class="text-white text-[11px] font-semibold">SIEMENS</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/lg.png" alt="LG전자" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">LG전자</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/hyundai.png" alt="HYUNDAI" class="w-full h-full object-cover"></div>
+                    <span class="text-white text-[11px] font-semibold">HYUNDAI</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/kia_new.png" alt="KIA" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">KIA</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/coway.png" alt="COWAY" class="w-full h-full object-cover"></div>
+                    <span class="text-white text-[11px] font-semibold">COWAY</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/deloitte.png" alt="Deloitte" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">Deloitte</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/bain.png" alt="BAIN & CO." class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">BAIN & CO.</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/bni.png" alt="BNI" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">BNI</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/kaist_new.png" alt="KAIST" class="w-full h-full object-contain scale-125"></div>
+                    <span class="text-white text-[11px] font-semibold">KAIST</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/khu_new.png" alt="경희대학교" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">경희대학교</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/dankook_new.png" alt="단국대학교" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">단국대학교</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-[#1e3264] shadow-lg flex items-center justify-center"><img src="https://space-i-workspace.github.io/assets/images/logos/etri_new.png" alt="ETRI" class="w-full object-contain"></div>
+                    <span class="text-white text-[11px] font-semibold">ETRI</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg flex items-center justify-center"><img src="https://space-i-workspace.github.io/assets/images/logos/severance_new.png" alt="세브란스병원" class="w-14 h-14 object-contain"></div>
+                    <span class="text-white text-[11px] font-semibold">세브란스병원</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/nhis_new.png" alt="국민건강보험" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">국민건강보험</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/sen_new.png" alt="서울시교육청" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">서울시교육청</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/kcpi.png" alt="한국보육진흥원" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">한국보육진흥원</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white shadow-lg"><img src="https://space-i-workspace.github.io/assets/images/logos/bosang.png" alt="법무법인 더보상" class="w-full h-full object-contain p-1"></div>
+                    <span class="text-white text-[11px] font-semibold">법무법인 더보상</span>
+                </div>
+            </div>
+            <p class="text-center text-white/30 text-xs mt-6 fade-up">실제 저희 공간을 사용하신 업체 및 기관들입니다</p>
+        </div>
+    </section>
+
+    <!-- ===== 최종 CTA ===== -->
+    <section class="py-20 md:py-28 bg-navy relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-gold rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl"></div>
+        </div>
+        <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 fade-up">지금 바로 시작하세요</h2>
+            <p class="text-white/70 text-lg mb-10 fade-up">강남 서초 프리미엄 주소지로 비즈니스를 시작하세요</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-up">
+                <a href="tel:010-9815-3017" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold text-white rounded-full font-semibold text-lg hover:bg-gold-dark transition-all duration-300 hover:shadow-xl">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    전화 상담
+                </a>
+                <a href="https://rcl.ink/yZR4y" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-full font-semibold text-lg hover:bg-emerald-700 transition-all duration-300 hover:shadow-xl">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    온라인 예약
+                </a>
+                <a href="https://pf.kakao.com/_Axmxdzs/chat" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#FEE500] text-[#3C1E1E] rounded-full font-semibold text-lg hover:bg-[#FDD835] transition-all duration-300 hover:shadow-xl">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.477 3 2 6.463 2 10.714c0 2.746 1.819 5.153 4.548 6.514-.142.527-.517 1.907-.592 2.2-.093.362.133.357.28.26.116-.077 1.843-1.253 2.592-1.763A12.1 12.1 0 0012 18.429c5.523 0 10-3.464 10-7.715C22 6.463 17.523 3 12 3z"/></svg>
+                    카카오톡 상담
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 카카오톡 플로팅 버튼 -->
+    <a href="https://pf.kakao.com/_Axmxdzs/chat" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#FEE500] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300">
+        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.477 3 2 6.463 2 10.714c0 2.746 1.819 5.153 4.548 6.514-.142.527-.517 1.907-.592 2.2-.093.362.133.357.28.26.116-.077 1.843-1.253 2.592-1.763A12.1 12.1 0 0012 18.429c5.523 0 10-3.464 10-7.715C22 6.463 17.523 3 12 3z"/></svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 스크롤 애니메이션
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+            // 캐러셀
+            var carousel = document.querySelector('.benefit-carousel');
+            if (!carousel) return;
+            var track = carousel.querySelector('.carousel-track');
+            var slides = carousel.querySelectorAll('.carousel-slide');
+            var dots = carousel.querySelectorAll('.carousel-dots button');
+            var prevBtn = carousel.querySelector('.carousel-prev');
+            var nextBtn = carousel.querySelector('.carousel-next');
+            var current = 0;
+            var total = slides.length;
+            var autoTimer;
+            var touchStartX = 0;
+
+            function goTo(idx) {
+                current = (idx + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function(d, i) {
+                    d.className = 'w-3 h-3 rounded-full transition-all duration-300 ' + (i === current ? 'bg-navy scale-110' : 'bg-slate-300');
+                });
+            }
+            function startAuto() { autoTimer = setInterval(function() { goTo(current + 1); }, 4000); }
+            function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+            prevBtn.addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+            nextBtn.addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+            dots.forEach(function(dot) {
+                dot.addEventListener('click', function() { goTo(+this.dataset.index); resetAuto(); });
+            });
+
+            track.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', function(e) {
+                var diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); resetAuto(); }
+            });
+
+            startAuto();
+
+            // FAQ 아코디언
+            document.querySelectorAll('.faq-question').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var item = this.closest('.faq-item');
+                    var isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

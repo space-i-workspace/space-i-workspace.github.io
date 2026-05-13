@@ -1,0 +1,247 @@
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { DEFAULT: '#1B2A4A', light: '#2A3F6A', dark: '#111D35' },
+                        gold: { DEFAULT: '#C8A96E', light: '#D4BC8A', dark: '#B08D4A' },
+                    },
+                    fontFamily: { sans: ['Noto Sans KR', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+
+        /* 스크롤 애니메이션 */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-up-delay-1 { transition-delay: 0.15s; }
+        .fade-up-delay-2 { transition-delay: 0.3s; }
+        .fade-up-delay-3 { transition-delay: 0.45s; }
+
+        /* 히어로 */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://space-i-workspace.github.io/assets/images/p35_main.jpg') center/cover no-repeat;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(17,29,53,0.35) 0%,
+                rgba(17,29,53,0.6) 40%,
+                rgba(17,29,53,0.9) 100%
+            );
+        }
+
+        /* CTA 버튼 — 프리미엄 골드 메탈릭 */
+        .cta-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 48px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1B2A4A;
+            background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
+            border: 2px solid #B08D4A;
+            box-shadow: 0 0 0 3px rgba(200,169,110,0.25), 0 6px 24px rgba(200,169,110,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .cta-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 3px rgba(200,169,110,0.35), 0 10px 36px rgba(200,169,110,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+        .cta-gold svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* 3초 간편문의 */
+        .quick-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 50;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #1B2A4A;
+            background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
+            border: 2px solid #B08D4A;
+            box-shadow: 0 0 0 2px rgba(200,169,110,0.2), 0 4px 16px rgba(200,169,110,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .quick-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 0 2px rgba(200,169,110,0.3), 0 8px 24px rgba(200,169,110,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+        }
+
+        /* 가격 섹션 배경 */
+        .price-section {
+            background: linear-gradient(135deg, #111D35 0%, #1B2A4A 50%, #2A3F6A 100%);
+        }
+
+        /* 구분선 */
+        .gold-divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #C8A96E, #B08D4A);
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        /* 체크 아이콘 */
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .check-icon {
+            width: 36px;
+            height: 36px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* POINT 카드 */
+        .point-tag {
+            background: #2D5016;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+        .point-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .point-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(27,42,74,0.12);
+            border-color: rgba(200,169,110,0.3);
+        }
+        .point-card .img-wrap {
+            overflow: hidden;
+        }
+        .point-card img {
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .point-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 프로세스 아이콘 박스 */
+        .process-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(27,42,74,0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+
+        /* 스플릿 섹션 (이미지+텍스트 반반) */
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+        .split-section .story-img { overflow: hidden; }
+        .split-section .story-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+        .split-section .story-img:hover img { transform: scale(1.05); }
+
+        /* 풀 이미지 오버레이 섹션 */
+        .photo-section { position: relative; overflow: hidden; }
+        .photo-section-bg { position: absolute; inset: 0; }
+        .photo-section-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .photo-section-overlay { position: absolute; inset: 0; }
+
+        /* 태그 알약 */
+        .tag-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; }
+
+        /* FAQ */
+        .faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; transition: box-shadow 0.3s ease; }
+        .faq-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; background: none; border: none; cursor: pointer; font-size: 1.2rem; font-weight: 600; color: #1B2A4A; text-align: left; font-family: inherit; gap: 1rem; }
+        .faq-question:hover { background: rgba(27,42,74,0.02); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 1.5rem; }
+        .faq-answer p { color: #6b7280; font-size: 1.1rem; line-height: 1.7; }
+        .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        /* 비교표 */
+        .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+        .compare-table th, .compare-table td { padding: 20px 24px; text-align: center; font-size: 1.25rem; font-weight: 600; }
+        .compare-table thead th { background: #1B2A4A; color: white; font-weight: 800; font-size: 1.4rem; }
+        .compare-table thead th:first-child { background: #2A3F6A; border-radius: 12px 0 0 0; }
+        .compare-table thead th:last-child { background: linear-gradient(135deg, #C8A96E, #B08D4A); color: #1B2A4A; font-size: 1.6rem; border-radius: 0 12px 0 0; position: relative; }
+        .compare-table tbody tr { border-bottom: 1px solid #e2e8f0; }
+        .compare-table tbody tr:hover { background: #f8fafc; }
+        .compare-table tbody td:first-child { font-weight: 700; color: #1B2A4A; text-align: left; font-size: 1.25rem; }
+        .compare-table tbody td:last-child { color: #C8A96E; font-weight: 800; font-size: 1.25rem; position: relative; }
+        .compare-table tbody td { border-bottom: 1px solid #e2e8f0; }
+        .compare-table thead th:last-child { border-top: 3px solid #ef4444; border-left: 3px solid #ef4444; border-right: 3px solid #ef4444; animation: pulseGlow 2s ease-in-out infinite; }
+        .compare-table tbody td:last-child { border-left: 3px solid #ef4444; border-right: 3px solid #ef4444; background: rgba(239,68,68,0.03); }
+        .compare-table tbody tr:last-child td:last-child { border-bottom: 3px solid #ef4444; }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 -4px 12px rgba(239,68,68,0.15), 4px 0 12px rgba(239,68,68,0.15), -4px 0 12px rgba(239,68,68,0.15); }
+            50% { box-shadow: 0 -4px 24px rgba(239,68,68,0.4), 4px 0 24px rgba(239,68,68,0.4), -4px 0 24px rgba(239,68,68,0.4); }
+        }
+
+        /* 통계 */
+        .stat-number { font-size: 2.5rem; font-weight: 900; line-height: 1; }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .point-grid { grid-template-columns: 1fr !important; }
+            .service-split { flex-direction: column !important; gap: 2rem !important; }
+            .split-section { grid-template-columns: 1fr; min-height: auto; }
+            .hero-section { min-height: 100svh; }
+        }
+    </style>
