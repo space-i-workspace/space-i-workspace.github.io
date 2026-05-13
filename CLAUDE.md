@@ -30,7 +30,14 @@ spacei-website/
 - Accent (골드): #C8A96E
 - CTA: #10B981 (에메랄드), #C8A96E (골드)
 
+## 변경 후 검증 규칙
+- **코드 수정 후 반드시 브라우저에서 동작을 확인**한 뒤 사용자에게 알린다
+- 검증 방법: `curl`로 HTML 응답 확인, 또는 실제 렌더링 관련 요소(클래스, 속성, 링크 등) grep으로 검증
+- 테스트가 통과되지 않으면 원인을 파악하고 수정한 후 재검증한다
+- 검증 없이 "완료"라고 보고하지 않는다
+
 ## 주의사항
-- 이미지는 현재 placeholder (그라디언트) → 실제 사진으로 교체 필요
-- 전화번호(02-000-0000), 이메일, 카카오톡 링크 실제 값으로 교체 필요
-- 지도 임베드 좌표 정확한 값으로 교체 필요
+- 전화번호: 010-9815-3017
+- 예약 링크: https://rcl.ink/yZR4y
+- 카카오톡 채널: https://pf.kakao.com/_Axmxdzs/chat
+- 결제 링크: https://spaceicowork.cafe24.com/order/orderform.html?basket_type=A0000&delvtype=A
