@@ -769,12 +769,9 @@ input, button, textarea, select { font: inherit; }
 
 /* ===== 접기/펼치기 ===== */
 .si-collapse {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.si-collapse.open {
-  max-height: 12000px;
+  height: 0;
+  transition: height 0.5s ease;
 }
 .si-thankyou-btns {
   display: flex;
@@ -1027,7 +1024,7 @@ input, button, textarea, select { font: inherit; }
 }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
-#skipNavigation, #header, #sidebar, #footer, #quick, hr.layout,
+#skipNavigation, #header, #sidebar, #quick, hr.layout,
 .layer_shadow, #layoutDimmed,
 .smart-banner, [class*="smart-banner"], [data-banner-code],
 .xans-layout-banner, .xans-layout-logotop,

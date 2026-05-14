@@ -686,7 +686,7 @@
             </div>
         </div>
         <div style="text-align: center; margin-top: 3rem;" class="fade-up">
-            <button id="space-toggle" class="si-pill-btn-3d" onclick="(function(){var c=document.getElementById('space-detail'),b=document.getElementById('space-toggle'),isOpen=c.classList.toggle('open');b.innerHTML=isOpen?'프리미엄 공간 접기 &#8593;':'프리미엄 공간 더보기 &#8595;';})()">프리미엄 공간 더보기 &#8595;</button>
+            <button id="space-toggle" class="si-pill-btn-3d" onclick="(function(){var c=document.getElementById('space-detail'),b=document.getElementById('space-toggle'),h=c.style.height;if(h &amp;&amp; h!=='0px'){c.style.height='0px';b.textContent='프리미엄 공간 더보기 ↓';}else{c.style.height=c.scrollHeight+'px';b.textContent='프리미엄 공간 접기 ↑';}})()">프리미엄 공간 더보기 &#8595;</button>
         </div>
     </div>
 </section>
