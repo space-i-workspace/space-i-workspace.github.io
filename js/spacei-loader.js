@@ -1325,13 +1325,24 @@ body {
   }
   setTimeout(hideBottomNavItems, 1500);
 
+  function restoreScroll() {
+    var saved = sessionStorage.getItem('siScrollY');
+    if (saved) {
+      sessionStorage.removeItem('siScrollY');
+      setTimeout(function() { window.scrollTo(0, parseInt(saved)); }, 150);
+    }
+  }
+  window.addEventListener('pageshow', function(e) { if (e.persisted) restoreScroll(); });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
       initQuickBtn();
+      restoreScroll();
     });
   } else {
     transformSnsLinks();
     initQuickBtn();
+    restoreScroll();
   }
 })();
