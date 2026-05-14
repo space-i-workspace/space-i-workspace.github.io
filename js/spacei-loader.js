@@ -935,14 +935,14 @@ input, button, textarea, select { font: inherit; }
   bottom: 2rem;
   left: 1.5rem;
   z-index: 20;
-  max-width: 260px;
+  max-width: 320px;
 }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-  padding: 1.25rem 1.25rem;
+  padding: 1.5rem 1.5rem;
   text-align: left;
 }
 .si-speech-bubble-inner p:first-child {
@@ -950,7 +950,7 @@ input, button, textarea, select { font: inherit; }
 }
 .si-speech-bubble-inner p:last-of-type {
   color: #1B2A4A !important;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   text-align: left;
 }
 .si-speech-bubble-tail {
