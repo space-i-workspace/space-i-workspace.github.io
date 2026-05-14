@@ -1068,8 +1068,9 @@ input, button, textarea, select { font: inherit; }
   .split-section { grid-template-columns: 1fr; min-height: auto; }
   .hero-section { min-height: 100svh; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
-  .si-mobile-bubble { display: block; }
-  .si-desktop-only { display: none; }
+  .si-speech-bubble { max-width: 280px; top: 1rem; left: 1rem; }
+  .si-speech-bubble-inner { padding: 1rem 1.25rem; }
+  .si-speech-bubble-inner p:last-child { font-size: 1rem; }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
@@ -1096,6 +1097,11 @@ div[id*="channel-chat"], iframe[title*="카카오"],
 div[id*="kakao"], iframe[id*="kakao"],
 a[id*="kakao-talk"], div[class*="kakao_chat"],
 #kakao-talk-channel-chat-button-wrapper,
+iframe[src*="kakao"], div[data-channel-public-id],
+div[class*="kakao"], a[class*="kakao"],
+div[id*="kakao-talk"], div[id*="KakaoTalk"],
+img[src*="kakao"], div[style*="kakao"],
+[data-kakao], [class*="Kakao"], [id*="Kakao"],
 .xans-layout-boardlist, .xans-board-listpackage,
 .aside_customer, [class*="customer_"], [class*="boardList"],
 .xans-layout-popup, .popup_wrap, .pop_footer,
@@ -1344,15 +1350,57 @@ body {
     }
   }, true);
 
+  function killKakaoFloat() {
+    var sels = [
+      '#kakao-talk-channel-chat-button', '#kakao-talk-channel-chat-button-wrapper',
+      '#channel-chat-button-iframe', '.kakao_chat_btn', '.BtnKakao',
+      'iframe[src*="kakao"]', 'iframe[title*="카카오"]',
+      'div[data-channel-public-id]', '[data-kakao]'
+    ];
+    var q = sels.join(',');
+    document.querySelectorAll(q).forEach(function(el) { el.remove(); });
+    document.querySelectorAll('div, iframe, a').forEach(function(el) {
+      var id = (el.id || '').toLowerCase();
+      var cls = (el.className || '').toString().toLowerCase();
+      var src = (el.src || el.href || '').toLowerCase();
+      if ((id.indexOf('kakao') !== -1 && id.indexOf('si-') === -1) ||
+          (cls.indexOf('kakao') !== -1 && cls.indexOf('si-') === -1) ||
+          src.indexOf('developers.kakao.com') !== -1 ||
+          src.indexOf('channel-chat') !== -1) {
+        el.remove();
+      }
+    });
+  }
+
+  function cleanFooterThankyou() {
+    var footer = document.getElementById('footer');
+    if (!footer) return;
+    var ty = footer.querySelector('.si-thankyou, .si-thankyou-card');
+    if (ty) {
+      var section = ty.closest('section') || ty.closest('.si-thankyou') || ty;
+      section.remove();
+    }
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
       initQuickBtn();
       restoreScroll();
+      killKakaoFloat();
+      cleanFooterThankyou();
+      setTimeout(killKakaoFloat, 1000);
+      setTimeout(killKakaoFloat, 3000);
+      setTimeout(killKakaoFloat, 5000);
     });
   } else {
     transformSnsLinks();
     initQuickBtn();
     restoreScroll();
+    killKakaoFloat();
+    cleanFooterThankyou();
+    setTimeout(killKakaoFloat, 1000);
+    setTimeout(killKakaoFloat, 3000);
+    setTimeout(killKakaoFloat, 5000);
   }
 })();
