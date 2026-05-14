@@ -551,11 +551,11 @@ input, button, textarea, select { font: inherit; }
   opacity: 1;
 }
 .si-match-banner-inner p {
-  color: #FF6B6B !important;
+  color: #FFFFFF !important;
   font-size: 1.15rem !important;
   font-weight: 900 !important;
   letter-spacing: 0.05em !important;
-  text-shadow: 0 0 8px rgba(255,107,107,0.4);
+  text-shadow: none;
 }
 
 /* ===== 협약 이미지 카드 ===== */
