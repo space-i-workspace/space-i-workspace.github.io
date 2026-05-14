@@ -544,18 +544,18 @@ input, button, textarea, select { font: inherit; }
   border-radius: 0.75rem;
   padding: 1rem 2.2rem;
   text-align: center;
-  background: transparent;
+  background: rgba(229,62,62,0.12);
   border: 3px solid #E53E3E;
   box-shadow: inset 0 0 0 2px transparent, 0 0 0 1px rgba(229,62,62,0.3);
   transform: rotate(-2deg);
-  opacity: 0.9;
+  opacity: 1;
 }
 .si-match-banner-inner p {
-  color: #E53E3E !important;
-  font-size: 1.05rem !important;
+  color: #FF6B6B !important;
+  font-size: 1.15rem !important;
   font-weight: 900 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase;
+  letter-spacing: 0.05em !important;
+  text-shadow: 0 0 8px rgba(255,107,107,0.4);
 }
 
 /* ===== 협약 이미지 카드 ===== */
