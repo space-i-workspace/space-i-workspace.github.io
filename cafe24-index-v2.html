@@ -649,28 +649,31 @@
 </section>
 
 <!-- ===== 프리미엄 공간 + 지도 (접기/펼치기) ===== -->
-<section style="background: #f8fafc; padding: 2rem 0;">
+<section style="background: #f8fafc; padding: 3rem 0;">
     <div class="si-container">
+        <div style="text-align: center; margin-bottom: 1rem;" class="fade-up">
+            <button id="space-toggle" class="si-pill-btn-3d" onclick="(function(){var c=document.getElementById('space-content'),b=document.getElementById('space-toggle'),isOpen=c.classList.toggle('open');b.innerHTML=isOpen?'프리미엄 공간 접기 &#8593;':'프리미엄 공간 확인하기 &#8595;';})()">프리미엄 공간 확인하기 &#8595;</button>
+        </div>
         <div id="space-content" class="si-collapse">
-            <div style="text-align: center; margin-bottom: 4rem; padding-top: 3rem;">
-                <h2 style="font-size: clamp(1.875rem, 4vw, 2.25rem); font-weight: 800; color: #1B2A4A; margin-bottom: 1rem;" class="fade-up">프리미엄 공간을 확인하세요</h2>
-                <p style="color: #64748b; font-size: 1.25rem;" class="fade-up">강남 서초 하이브랜드 13층, 호텔뷰 업무공간</p>
+            <div style="text-align: center; margin-bottom: 4rem; padding-top: 2rem;">
+                <h2 style="font-size: clamp(1.875rem, 4vw, 2.25rem); font-weight: 800; color: #1B2A4A; margin-bottom: 1rem;">프리미엄 공간을 확인하세요</h2>
+                <p style="color: #64748b; font-size: 1.25rem;">강남 서초 하이브랜드 13층, 호텔뷰 업무공간</p>
             </div>
             <div class="si-grid si-grid-2 si-md-grid-4" style="gap: 1rem; margin-bottom: 3rem;">
-                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;" class="fade-up">
+                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;">
                     <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/f12f7187af2f551cc49a8eedde9cad3c.jpg" alt="빌딩 외관" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;" class="fade-up">
+                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;">
                     <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/a2e71ebb71a4c45165c521b113d3f065.jpg" alt="호텔뷰 전망" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;" class="fade-up">
+                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;">
                     <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/d0102d966f3fb4536a7ba1e73ffc0d28.jpg" alt="업무공간" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;" class="fade-up">
+                <div style="aspect-ratio: 4/3; border-radius: 1rem; overflow: hidden;">
                     <img src="https://ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/web/product/extra/big/20250704/62724a7586f44d5576edd4fd49f7faeb.jpg" alt="회의실" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
             </div>
-            <div class="si-map-card fade-up">
+            <div class="si-map-card">
                 <div style="overflow: hidden; cursor: pointer;">
                     <a href="https://naver.me/xf5MEfUE" target="_blank" rel="noopener">
                         <img src="//ecimg.cafe24img.com/pg1956b48969531077/spaceicowork/map.JPG" alt="공간i 양재점 네이버 지도" style="width: 100%; height: 16rem; object-fit: cover; transition: transform 0.5s ease; display: block;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
@@ -686,9 +689,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div style="text-align: center; padding: 1.5rem 0;">
-            <button id="space-toggle" class="si-pill-btn" onclick="(function(){var c=document.getElementById('space-content'),b=document.getElementById('space-toggle'),isOpen=c.classList.toggle('open');b.innerHTML=isOpen?'프리미엄 공간 접기 ↑':'프리미엄 공간 확인하기 ↓';})()">프리미엄 공간 확인하기 &#8595;</button>
         </div>
     </div>
 </section>

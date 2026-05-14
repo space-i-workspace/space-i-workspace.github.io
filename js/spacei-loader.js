@@ -743,6 +743,29 @@ input, button, textarea, select { font: inherit; }
   color: white;
   transform: translateY(-2px);
 }
+.si-pill-btn-3d {
+  display: inline-block;
+  padding: 1.1rem 3.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #2a3f66 0%, #1B2A4A 100%);
+  color: rgba(255,255,255,0.9);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 15px rgba(27,42,74,0.4), 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.si-pill-btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27,42,74,0.5), 0 3px 6px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.si-pill-btn-3d:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(27,42,74,0.3), inset 0 1px 3px rgba(0,0,0,0.2);
+}
 
 /* ===== 접기/펼치기 ===== */
 .si-collapse {
