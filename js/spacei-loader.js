@@ -932,31 +932,43 @@ input, button, textarea, select { font: inherit; }
 /* ===== 말풍선 (상주매니저 실제 회원 사례) ===== */
 .si-speech-bubble {
   position: absolute;
-  top: 2rem;
+  bottom: 2rem;
   left: 1.5rem;
   z-index: 20;
   max-width: 280px;
 }
 .si-speech-bubble-inner {
   position: relative;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-  padding: 1.25rem 1.75rem;
+  background: #1B2A4A;
+  border-radius: 50%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  padding: 2.5rem 2rem;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.si-speech-bubble-inner p:first-child {
+  color: #10B981 !important;
 }
 .si-speech-bubble-inner p:last-child {
-  font-size: 1.05rem;
+  color: white !important;
+  font-size: 0.95rem;
 }
 .si-speech-bubble-tail {
   position: absolute;
-  top: 30%;
-  right: -0.6rem;
-  left: auto;
-  width: 1.2rem;
-  height: 1.2rem;
-  background: white;
-  transform: rotate(30deg);
-  box-shadow: 3px -2px 3px rgba(0,0,0,0.04);
+  top: -10px;
+  right: 20%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom: 18px solid #1B2A4A;
+  border-top: 0;
+  background: none;
+  transform: rotate(20deg);
+  box-shadow: none;
 }
 
 /* ===== 빌딩 배경 (신뢰 섹션) ===== */
@@ -1072,11 +1084,10 @@ input, button, textarea, select { font: inherit; }
   .split-section { grid-template-columns: 1fr; min-height: auto; }
   .hero-section { min-height: 100svh; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
-  .si-speech-bubble { max-width: 220px; top: auto; bottom: 1.5rem; left: 1rem; }
-  .si-speech-bubble-inner { padding: 0.875rem 1.125rem; border-radius: 1.25rem; }
-  .si-speech-bubble-inner p:first-child { font-size: 0.625rem; margin-bottom: 0.25rem; }
-  .si-speech-bubble-inner p:last-child { font-size: 0.8rem; }
-  .si-speech-bubble-tail { top: -0.5rem; left: auto; right: 1.5rem; transform: rotate(45deg); width: 1.2rem; height: 1.2rem; box-shadow: -2px -2px 3px rgba(0,0,0,0.04); }
+  .si-speech-bubble { max-width: 180px; top: auto; bottom: 1rem; left: 0.75rem; }
+  .si-speech-bubble-inner { padding: 1.75rem 1.5rem; }
+  .si-speech-bubble-inner p:first-child { font-size: 0.6rem; margin-bottom: 0.25rem; }
+  .si-speech-bubble-inner p:last-child { font-size: 0.75rem; }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
