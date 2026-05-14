@@ -654,6 +654,24 @@ input, button, textarea, select { font: inherit; }
   50% { opacity: 1; transform: scale(1.2); }
 }
 
+/* ===== 최종 CTA 버튼 ===== */
+.si-final-cta-btn {
+  flex: 1;
+  min-width: 10rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 800;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+}
+.si-final-cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
 /* ===== 카카오 플로팅 ===== */
 
 /* ===== CTA 버튼 그룹 ===== */
