@@ -834,7 +834,25 @@ input, button, textarea, select { font: inherit; }
 .xans-layout-banner, .xans-layout-logotop,
 .xans-product-listmain, .xans-layout-category,
 .section.main_product_category,
-#topBanner, .topbanner_area, .top_banner { display: none !important; }
+#topBanner, .topbanner_area, .top_banner,
+#kakao-talk-channel-chat-button, .kakao_chat_btn,
+#channel-chat-button-iframe, .BtnKakao,
+div[id*="channel-chat"], iframe[title*="카카오"] { display: none !important; }
+
+/* ===== 우리 카카오 버튼 ===== */
+.si-kakao-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+.si-kakao-float:hover { transform: scale(1.08); }
+.si-kakao-float img {
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
 
 /* 카페24 기본 레이아웃 제한 해제 */
 #wrap, #container, #contents {
