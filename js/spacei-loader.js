@@ -956,7 +956,7 @@ input, button, textarea, select { font: inherit; }
 .si-speech-bubble-tail {
   position: absolute;
   top: -14px;
-  right: 12%;
+  right: 5%;
   width: 0;
   height: 0;
   border: 10px solid transparent;
