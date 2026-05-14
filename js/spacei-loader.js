@@ -1097,15 +1097,7 @@ nav a[href*="search"], nav a[href*="cart"], nav a[href*="basket"],
   align-items: center !important;
 }
 
-/* 위아래 화살표 숨김 */
-.xans-layout-moveTop,
-a[href="#header"], a[href="#footer"],
-div[class*="moveTop"], div[class*="scroll_top"],
-div[class*="page_top"], div[class*="pagetop"],
-.btnTop, .btn_top, #topBtn, .top_btn,
-#quick, .quick_menu, #quick_menu,
-div[class*="quick"], [id*="scrollTop"],
-.fixedBtnWrap, .fixedArea { display: none !important; }
+/* 스크롤 화살표(위/아래) 표시 유지 */
 
 /* ===== 우리 카카오 버튼 ===== */
 .si-kakao-float {
