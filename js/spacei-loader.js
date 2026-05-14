@@ -214,7 +214,6 @@ input, button, textarea, select { font: inherit; }
   display: inline-block;
   animation: fingerTap 1s ease-in-out infinite !important;
   margin-left: 8px;
-  order: 2;
 }
 
 /* ===== 3초 간편문의 버튼 ===== */
