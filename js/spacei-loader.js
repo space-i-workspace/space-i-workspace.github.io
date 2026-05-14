@@ -821,6 +821,7 @@ input, button, textarea, select { font: inherit; }
 @media (max-width: 480px) {
   .si-thankyou-btns { flex-direction: column; }
   .si-thankyou-card { padding: 3rem 1.5rem 2.5rem; }
+  .si-hero-title { font-size: 1.6rem !important; word-break: keep-all; }
 }
 
 /* ===== 카카오 플로팅 ===== */
