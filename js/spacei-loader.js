@@ -722,6 +722,27 @@ input, button, textarea, select { font: inherit; }
 .si-review-card.visible .si-underline {
   background-size: 100% 40%;
 }
+
+/* ===== 필(pill) 스크롤 버튼 ===== */
+.si-pill-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  border-radius: 9999px;
+  background: rgba(27,42,74,0.85);
+  color: rgba(255,255,255,0.8);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+.si-pill-btn:hover {
+  background: rgba(27,42,74,1);
+  border-color: rgba(255,255,255,0.3);
+  color: white;
+  transform: translateY(-2px);
+}
 .si-thankyou-btns {
   display: flex;
   gap: 1rem;
