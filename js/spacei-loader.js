@@ -1071,6 +1071,111 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* ===== 푸터 표시 & SNS 아이콘 ===== */
+#footer { display: block !important; }
+
+.si-sns-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem 0;
+}
+.si-sns-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background: #1B2A4A;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.si-sns-icon:hover {
+  transform: scale(1.12);
+  background: #C8A96E;
+}
+.si-sns-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+.si-sns-instagram { background: linear-gradient(135deg, #833AB4, #E1306C, #F77737); }
+.si-sns-instagram:hover { background: linear-gradient(135deg, #6C2E9A, #C4245A, #D96528); }
+.si-sns-youtube { background: #FF0000; }
+.si-sns-youtube:hover { background: #CC0000; }
+.si-sns-kakao { background: #FEE500; }
+.si-sns-kakao svg { fill: #3C1E1E; }
+.si-sns-kakao:hover { background: #E5CF00; }
+.si-sns-blog { background: #03C75A; }
+.si-sns-blog:hover { background: #02B351; }
 `;
   document.head.appendChild(s);
+
+  // SNS 텍스트 링크 → 아이콘 변환
+  var snsIcons = {
+    instagram: '<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>',
+    youtube: '<svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
+    kakao: '<svg viewBox="0 0 24 24"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.847 1.893 5.34 4.735 6.756-.21.776-.756 2.813-.867 3.246-.138.54.198.533.417.388.171-.114 2.734-1.857 3.841-2.61.598.088 1.218.134 1.874.134 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>',
+    blog: '<svg viewBox="0 0 24 24"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>'
+  };
+
+  function transformSnsLinks() {
+    var footer = document.getElementById('footer');
+    if (!footer) return;
+
+    var snsContainer = footer.querySelector('.sns, .snsArea, [class*="sns"], [class*="Sns"]');
+    if (!snsContainer) {
+      var links = footer.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+        var t = (links[i].textContent || '').trim().toLowerCase();
+        if (t === 'instagram' || t === 'youtube' || t === 'kakao' || t === 'blog' ||
+            t === '인스타그램' || t === '유튜브' || t === '카카오' || t === '블로그') {
+          snsContainer = links[i].parentElement;
+          if (snsContainer.tagName === 'LI') snsContainer = snsContainer.parentElement;
+          break;
+        }
+      }
+    }
+    if (!snsContainer) return;
+
+    var found = {};
+    snsContainer.querySelectorAll('a').forEach(function(a) {
+      var txt = (a.textContent || '').trim().toLowerCase();
+      var href = a.href || '#';
+      if (txt.indexOf('instagram') !== -1 || txt.indexOf('인스타') !== -1) found.instagram = href;
+      else if (txt.indexOf('youtube') !== -1 || txt.indexOf('유튜브') !== -1) found.youtube = href;
+      else if (txt.indexOf('kakao') !== -1 || txt.indexOf('카카오') !== -1) found.kakao = href;
+      else if (txt.indexOf('blog') !== -1 || txt.indexOf('블로그') !== -1) found.blog = href;
+    });
+
+    var iconWrap = document.createElement('div');
+    iconWrap.className = 'si-sns-icons';
+    ['instagram','youtube','kakao','blog'].forEach(function(key) {
+      if (!found[key]) return;
+      var a = document.createElement('a');
+      a.href = found[key];
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.className = 'si-sns-icon si-sns-' + key;
+      a.innerHTML = snsIcons[key];
+      a.title = key.charAt(0).toUpperCase() + key.slice(1);
+      iconWrap.appendChild(a);
+    });
+
+    if (iconWrap.children.length > 0) {
+      snsContainer.parentElement.insertBefore(iconWrap, snsContainer);
+      snsContainer.style.display = 'none';
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', transformSnsLinks);
+  } else {
+    transformSnsLinks();
+  }
 })();
