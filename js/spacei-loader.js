@@ -650,6 +650,59 @@ input, button, textarea, select { font: inherit; }
 }
 .si-final-cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+/* ===== 감사 랜딩 페이지 ===== */
+.si-thankyou {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0D1829 0%, #1B2A4A 50%, #0D1829 100%);
+  padding: 3rem 1rem;
+}
+.si-thankyou-card {
+  max-width: 36rem;
+  width: 100%;
+  padding: 3.5rem 2.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(200,169,110,0.25);
+  box-shadow: 0 0 60px rgba(200,169,110,0.08), inset 0 1px 0 rgba(255,255,255,0.05);
+  text-align: center;
+}
+.si-thankyou-check {
+  width: 5rem; height: 5rem;
+  border: 3px solid #C8A96E;
+  border-radius: 9999px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 2.5rem;
+  box-shadow: 0 0 20px rgba(200,169,110,0.3);
+}
+.si-thankyou-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 13rem;
+}
+.si-thankyou-btn:hover { transform: translateY(-2px); }
+.si-thankyou-btn-gold {
+  background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
+  color: #1B2A4A;
+  border: none;
+}
+.si-thankyou-btn-dark {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.3);
+}
+.si-thankyou-btn-dark:hover { border-color: rgba(255,255,255,0.6); }
+
 /* ===== 카카오 플로팅 ===== */
 
 /* ===== CTA 버튼 그룹 ===== */
