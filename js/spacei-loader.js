@@ -201,24 +201,22 @@ input, button, textarea, select { font: inherit; }
 /* ===== 3초 간편문의 버튼 ===== */
 .quick-btn {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 12px;
+  right: 20px;
   z-index: 9998;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
-  padding: 14px 24px;
+  padding: 12px 24px;
+  border-radius: 100px;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #1B2A4A;
   background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
-  border: none;
-  border-bottom: 2px solid #B08D4A;
-  box-shadow: 0 2px 12px rgba(200,169,110,0.4);
+  border: 2px solid #B08D4A;
+  box-shadow: 0 0 0 2px rgba(200,169,110,0.2), 0 4px 16px rgba(200,169,110,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
   text-decoration: none;
-  transform: translateY(-100%);
+  transform: translateY(-80px);
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
   pointer-events: none;
@@ -229,7 +227,11 @@ input, button, textarea, select { font: inherit; }
   pointer-events: auto;
 }
 .quick-btn:hover {
-  background: linear-gradient(180deg, #FFF0B8 0%, #DECA7E 40%, #D4B87A 60%, #F0DEA4 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 2px rgba(200,169,110,0.3), 0 8px 24px rgba(200,169,110,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+.quick-btn.visible:hover {
+  transform: translateY(-2px);
 }
 
 /* ===== 가격 섹션 ===== */
