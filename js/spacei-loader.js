@@ -11,7 +11,7 @@
 /* ===== 리셋 & 기본 ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 * { font-family: 'Noto Sans KR', sans-serif; }
-body { line-height: 1.5; -webkit-text-size-adjust: 100%; }
+body { line-height: 1.5; -webkit-text-size-adjust: 100%; word-break: keep-all; }
 a { color: inherit; text-decoration: none; }
 img, svg, video { display: block; max-width: 100%; height: auto; }
 button { font-family: inherit; cursor: pointer; }
@@ -821,7 +821,13 @@ input, button, textarea, select { font: inherit; }
 @media (max-width: 480px) {
   .si-thankyou-btns { flex-direction: column; }
   .si-thankyou-card { padding: 3rem 1.5rem 2.5rem; }
-  .si-hero-title { font-size: 1.6rem !important; word-break: keep-all; }
+  .si-hero-title { font-size: 1.6rem !important; }
+  .si-doc-card { padding: 1rem 0.75rem !important; }
+  .si-doc-card p { font-size: 0.95rem !important; }
+  .si-stamp-inner { width: 4.5rem !important; height: 4.5rem !important; }
+  .si-stamp-inner span { font-size: 1.1rem !important; }
+  .si-equal-circle { width: 2.5rem !important; height: 2.5rem !important; }
+  .si-equal-circle span { font-size: 1rem !important; }
 }
 
 /* ===== 카카오 플로팅 ===== */
@@ -1065,6 +1071,9 @@ input, button, textarea, select { font: inherit; }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
+  .compare-table { table-layout: fixed; width: 100%; }
+  .compare-table th, .compare-table td { padding: 12px 8px !important; font-size: 0.85rem !important; }
+  .compare-table thead th { font-size: 0.95rem !important; }
 }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
