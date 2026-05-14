@@ -201,37 +201,26 @@ input, button, textarea, select { font: inherit; }
 /* ===== 3초 간편문의 버튼 ===== */
 .quick-btn {
   position: fixed;
-  top: 12px;
+  top: 52px;
   right: 20px;
-  z-index: 9998;
+  z-index: 50;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 24px;
+  padding: 12px 24px;
   border-radius: 100px;
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #1B2A4A;
   background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
   border: 2px solid #B08D4A;
   box-shadow: 0 0 0 2px rgba(200,169,110,0.2), 0 4px 16px rgba(200,169,110,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
   text-decoration: none;
-  transform: translateY(-80px);
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  pointer-events: none;
-}
-.quick-btn.visible {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
 }
 .quick-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 0 2px rgba(200,169,110,0.3), 0 8px 24px rgba(200,169,110,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
-}
-.quick-btn.visible:hover {
-  transform: translateY(-2px);
 }
 
 /* ===== 가격 섹션 ===== */
@@ -1032,9 +1021,6 @@ input, button, textarea, select { font: inherit; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
   .si-mobile-bubble { display: block; }
   .si-desktop-only { display: none; }
-  html, body { overflow-x: hidden !important; }
-  #footer { overflow-x: hidden !important; }
-  #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
 }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
@@ -1085,139 +1071,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
-
-/* ===== 푸터 표시 & SNS 아이콘 ===== */
-#footer { display: block !important; }
-
-.si-sns-icons {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 2.5rem 1rem 2rem;
-  background: #f9f9f9;
-}
-.si-sns-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none !important;
-  cursor: pointer;
-}
-.si-sns-item:hover .si-sns-icon { transform: scale(1.12); }
-.si-sns-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 50%;
-  background: #1B2A4A;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-.si-sns-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: currentColor;
-}
-.si-sns-label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #666;
-  letter-spacing: 0.02em;
-}
-.si-sns-instagram .si-sns-icon { background: linear-gradient(135deg, #833AB4, #E1306C, #F77737); }
-.si-sns-instagram:hover .si-sns-icon { background: linear-gradient(135deg, #6C2E9A, #C4245A, #D96528); }
-.si-sns-youtube .si-sns-icon { background: #FF0000; }
-.si-sns-youtube:hover .si-sns-icon { background: #CC0000; }
-.si-sns-kakao .si-sns-icon { background: #FEE500; }
-.si-sns-kakao .si-sns-icon svg { fill: #3C1E1E; }
-.si-sns-kakao:hover .si-sns-icon { background: #E5CF00; }
-.si-sns-blog .si-sns-icon { background: #03C75A; }
-.si-sns-blog:hover .si-sns-icon { background: #02B351; }
 `;
   document.head.appendChild(s);
-
-  // SNS 텍스트 링크 → 아이콘 변환
-  var snsIcons = {
-    instagram: '<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>',
-    youtube: '<svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
-    kakao: '<svg viewBox="0 0 24 24"><path d="M12 3c-5.523 0-10 3.582-10 8 0 2.847 1.893 5.34 4.735 6.756-.21.776-.756 2.813-.867 3.246-.138.54.198.533.417.388.171-.114 2.734-1.857 3.841-2.61.598.088 1.218.134 1.874.134 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/></svg>',
-    blog: '<svg viewBox="0 0 24 24"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg>'
-  };
-
-  function transformSnsLinks() {
-    var footer = document.getElementById('footer');
-    if (!footer) return;
-
-    var snsContainer = footer.querySelector('.sns, .snsArea, [class*="sns"], [class*="Sns"]');
-    if (!snsContainer) {
-      var links = footer.querySelectorAll('a');
-      for (var i = 0; i < links.length; i++) {
-        var t = (links[i].textContent || '').trim().toLowerCase();
-        if (t === 'instagram' || t === 'youtube' || t === 'kakao' || t === 'blog' ||
-            t === '인스타그램' || t === '유튜브' || t === '카카오' || t === '블로그') {
-          snsContainer = links[i].parentElement;
-          if (snsContainer.tagName === 'LI') snsContainer = snsContainer.parentElement;
-          break;
-        }
-      }
-    }
-    if (!snsContainer) return;
-
-    var found = {};
-    snsContainer.querySelectorAll('a').forEach(function(a) {
-      var txt = (a.textContent || '').trim().toLowerCase();
-      var href = a.href || '#';
-      if (txt.indexOf('instagram') !== -1 || txt.indexOf('인스타') !== -1) found.instagram = href;
-      else if (txt.indexOf('youtube') !== -1 || txt.indexOf('유튜브') !== -1) found.youtube = href;
-      else if (txt.indexOf('kakao') !== -1 || txt.indexOf('카카오') !== -1) found.kakao = href;
-      else if (txt.indexOf('blog') !== -1 || txt.indexOf('블로그') !== -1) found.blog = href;
-    });
-
-    var labels = { instagram: 'Instagram', youtube: 'YouTube', kakao: 'KakaoTalk', blog: 'Blog' };
-    var iconWrap = document.createElement('div');
-    iconWrap.className = 'si-sns-icons';
-    ['instagram','youtube','kakao','blog'].forEach(function(key) {
-      if (!found[key]) return;
-      var a = document.createElement('a');
-      a.href = found[key];
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.className = 'si-sns-item si-sns-' + key;
-      a.innerHTML = '<span class="si-sns-icon">' + snsIcons[key] + '</span><span class="si-sns-label">' + labels[key] + '</span>';
-      iconWrap.appendChild(a);
-    });
-
-    if (iconWrap.children.length > 0) {
-      footer.parentElement.insertBefore(iconWrap, footer);
-      snsContainer.style.display = 'none';
-    }
-  }
-
-  // 3초 간편문의 버튼 스크롤 시 노출
-  function initQuickBtn() {
-    var btn = document.querySelector('.quick-btn');
-    if (!btn) return;
-    var threshold = window.innerHeight * 0.5;
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > threshold) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
-    }, { passive: true });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      transformSnsLinks();
-      initQuickBtn();
-    });
-  } else {
-    transformSnsLinks();
-    initQuickBtn();
-  }
 })();
