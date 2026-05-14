@@ -940,7 +940,7 @@ input, button, textarea, select { font: inherit; }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
-  border-radius: 1rem;
+  border-radius: 2rem;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
   padding: 1.5rem 1.75rem;
 }
