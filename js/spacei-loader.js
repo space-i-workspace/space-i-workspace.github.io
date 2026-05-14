@@ -939,7 +939,7 @@ input, button, textarea, select { font: inherit; }
 }
 .si-speech-bubble-inner {
   position: relative;
-  background: #1B2A4A;
+  background: white;
   border-radius: 50%;
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   padding: 2.5rem 2rem;
@@ -954,7 +954,7 @@ input, button, textarea, select { font: inherit; }
   color: #10B981 !important;
 }
 .si-speech-bubble-inner p:last-child {
-  color: white !important;
+  color: #1B2A4A !important;
   font-size: 0.95rem;
 }
 .si-speech-bubble-tail {
@@ -964,7 +964,7 @@ input, button, textarea, select { font: inherit; }
   width: 0;
   height: 0;
   border: 12px solid transparent;
-  border-bottom: 18px solid #1B2A4A;
+  border-bottom: 18px solid white;
   border-top: 0;
   background: none;
   transform: rotate(20deg);
