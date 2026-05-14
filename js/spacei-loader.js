@@ -706,6 +706,22 @@ input, button, textarea, select { font: inherit; }
   border: 1.5px solid rgba(255,255,255,0.3);
 }
 .si-thankyou-btn-dark:hover { border-color: rgba(255,255,255,0.6); }
+
+/* ===== 후기 밑줄 애니메이션 ===== */
+.si-underline {
+  background-image: linear-gradient(180deg, rgba(200,169,110,0.35) 0%, rgba(200,169,110,0.35) 100%);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 40%;
+  transition: background-size 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding-bottom: 2px;
+  font-weight: 700;
+  color: #1B2A4A;
+}
+.visible .si-underline,
+.si-review-card.visible .si-underline {
+  background-size: 100% 40%;
+}
 .si-thankyou-btns {
   display: flex;
   gap: 1rem;
