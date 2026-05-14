@@ -1061,6 +1061,16 @@ a[id*="kakao-talk"], div[class*="kakao_chat"],
 div[class*="popup"], div[class*="layer_popup"],
 .xans-product-popup, .modal_popup { display: none !important; }
 
+/* 모바일 하단 네비 검색/장바구니 숨김 (2번째, 4번째 아이콘) */
+.xans-layout-mobileFooter li:nth-child(2),
+.xans-layout-mobileFooter li:nth-child(4),
+.mobile_footer li:nth-child(2),
+.mobile_footer li:nth-child(4),
+#mobile_footer li:nth-child(2),
+#mobile_footer li:nth-child(4),
+.bottomMenu li:nth-child(2),
+.bottomMenu li:nth-child(4) { display: none !important; }
+
 /* 위아래 화살표 숨김 */
 .xans-layout-moveTop,
 a[href="#header"], a[href="#footer"],
