@@ -1052,6 +1052,9 @@ div[class*="announce"], div[class*="notice_bar"],
 #kakao-talk-channel-chat-button, .kakao_chat_btn,
 #channel-chat-button-iframe, .BtnKakao,
 div[id*="channel-chat"], iframe[title*="카카오"],
+div[id*="kakao"], iframe[id*="kakao"],
+a[id*="kakao-talk"], div[class*="kakao_chat"],
+#kakao-talk-channel-chat-button-wrapper,
 .xans-layout-popup, .popup_wrap, .pop_footer,
 div[class*="popup"], div[class*="layer_popup"],
 .xans-product-popup, .modal_popup { display: none !important; }
@@ -1065,7 +1068,7 @@ div[class*="moveTop"], div[class*="scroll_top"],
 /* ===== 우리 카카오 버튼 ===== */
 .si-kakao-float {
   position: fixed;
-  bottom: 5rem;
+  bottom: 3.5rem;
   right: 1rem;
   z-index: 9999;
   transition: all 0.3s ease;
