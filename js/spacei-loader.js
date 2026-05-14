@@ -1329,7 +1329,10 @@ body {
     var saved = sessionStorage.getItem('siScrollY');
     if (saved) {
       sessionStorage.removeItem('siScrollY');
-      setTimeout(function() { window.scrollTo(0, parseInt(saved)); }, 150);
+      var target = parseInt(saved);
+      [150, 400, 800, 1500].forEach(function(d) {
+        setTimeout(function() { window.scrollTo(0, target); }, d);
+      });
     }
   }
   window.addEventListener('pageshow', function(e) { if (e.persisted) restoreScroll(); });
