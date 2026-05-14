@@ -214,7 +214,7 @@ input, button, textarea, select { font: inherit; }
   display: inline-block;
   animation: fingerTap 0.9s ease-in-out infinite !important;
   margin-left: 10px;
-  vertical-align: -0.15em;
+  vertical-align: -0.45em;
 }
 
 /* ===== 3초 간편문의 버튼 ===== */
@@ -1091,7 +1091,19 @@ nav a[href*="search"], nav a[href*="cart"], nav a[href*="basket"],
 .xans-layout-mobileaction a[href*="basket"],
 .xans-layout-mobileaction li:nth-child(2),
 .RTMB li:nth-child(2),
-[class*="toolbar"] li:nth-child(2) { display: none !important; }
+[class*="toolbar"] li:nth-child(2),
+[class*="bottom"] a[href*="search"],
+[class*="bottom"] li:nth-child(2),
+[id*="bottom"] a[href*="search"],
+[id*="bottom"] li:nth-child(2),
+#aside_bottom a[href*="search"],
+#aside_bottom li:nth-child(2),
+.tnb_area a[href*="search"],
+.tnb_area li:nth-child(2),
+[class*="tnb"] a[href*="search"],
+[class*="tnb"] li:nth-child(2),
+[class*="fixed"] a[href*="search"],
+[class*="fixed"] li:nth-child(2) { display: none !important; }
 
 /* 모바일 하단 네비 균등 배치 + 홈 가운데 */
 .RTMB, .xans-layout-mobileaction, [class*="toolbar"],
@@ -1268,18 +1280,23 @@ body {
     var allLinks = document.querySelectorAll('a');
     allLinks.forEach(function(a) {
       var href = (a.href || '').toLowerCase();
-      var isBottom = false;
-      var el = a.closest('[style*="fixed"]') || a.closest('nav') || a.closest('footer');
-      if (!el) {
-        var rect = a.getBoundingClientRect();
-        if (rect.top > window.innerHeight - 80) isBottom = true;
-      } else {
-        isBottom = true;
+      if (href.indexOf('search') !== -1 || href.indexOf('cart') !== -1 || href.indexOf('basket') !== -1) {
+        a.style.setProperty('display', 'none', 'important');
+        if (a.parentElement) {
+          a.parentElement.style.setProperty('display', 'none', 'important');
+          if (a.parentElement.parentElement && a.parentElement.tagName === 'LI') {
+            a.parentElement.style.setProperty('display', 'none', 'important');
+          }
+        }
       }
-      if (isBottom && (href.indexOf('search') !== -1 || href.indexOf('cart') !== -1 || href.indexOf('basket') !== -1)) {
-        a.style.display = 'none';
-        if (a.parentElement && a.parentElement.tagName === 'LI') {
-          a.parentElement.style.display = 'none';
+    });
+    document.querySelectorAll('svg').forEach(function(svg) {
+      var parent = svg.closest('a');
+      if (parent) {
+        var href = (parent.href || '').toLowerCase();
+        if (href.indexOf('search') !== -1) {
+          parent.style.setProperty('display', 'none', 'important');
+          if (parent.parentElement) parent.parentElement.style.setProperty('display', 'none', 'important');
         }
       }
     });
