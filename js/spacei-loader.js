@@ -774,7 +774,7 @@ input, button, textarea, select { font: inherit; }
   transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .si-collapse.open {
-  max-height: 2000px;
+  max-height: 12000px;
 }
 .si-thankyou-btns {
   display: flex;
