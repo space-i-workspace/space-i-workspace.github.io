@@ -940,19 +940,20 @@ input, button, textarea, select { font: inherit; }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
-  border-radius: 2rem;
+  border-radius: 50px;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-  padding: 1.5rem 1.75rem;
+  padding: 1.5rem 2rem;
 }
 .si-speech-bubble-tail {
   position: absolute;
-  top: 50%;
-  right: -0.75rem;
+  top: -0.6rem;
+  right: 2rem;
+  left: auto;
   width: 1.5rem;
   height: 1.5rem;
   background: white;
-  transform: translateY(-50%) rotate(45deg);
-  box-shadow: 3px -3px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
 }
 
 /* ===== 빌딩 배경 (신뢰 섹션) ===== */
