@@ -1078,41 +1078,51 @@ body {
 .si-sns-icons {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.5rem 0;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2.5rem 1rem 2rem;
+  background: #f9f9f9;
 }
+.si-sns-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.si-sns-item:hover .si-sns-icon { transform: scale(1.12); }
 .si-sns-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   background: #1B2A4A;
   color: #fff;
   transition: all 0.3s ease;
-  text-decoration: none !important;
-  cursor: pointer;
-}
-.si-sns-icon:hover {
-  transform: scale(1.12);
-  background: #C8A96E;
 }
 .si-sns-icon svg {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   fill: currentColor;
 }
-.si-sns-instagram { background: linear-gradient(135deg, #833AB4, #E1306C, #F77737); }
-.si-sns-instagram:hover { background: linear-gradient(135deg, #6C2E9A, #C4245A, #D96528); }
-.si-sns-youtube { background: #FF0000; }
-.si-sns-youtube:hover { background: #CC0000; }
-.si-sns-kakao { background: #FEE500; }
-.si-sns-kakao svg { fill: #3C1E1E; }
-.si-sns-kakao:hover { background: #E5CF00; }
-.si-sns-blog { background: #03C75A; }
-.si-sns-blog:hover { background: #02B351; }
+.si-sns-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+.si-sns-instagram .si-sns-icon { background: linear-gradient(135deg, #833AB4, #E1306C, #F77737); }
+.si-sns-instagram:hover .si-sns-icon { background: linear-gradient(135deg, #6C2E9A, #C4245A, #D96528); }
+.si-sns-youtube .si-sns-icon { background: #FF0000; }
+.si-sns-youtube:hover .si-sns-icon { background: #CC0000; }
+.si-sns-kakao .si-sns-icon { background: #FEE500; }
+.si-sns-kakao .si-sns-icon svg { fill: #3C1E1E; }
+.si-sns-kakao:hover .si-sns-icon { background: #E5CF00; }
+.si-sns-blog .si-sns-icon { background: #03C75A; }
+.si-sns-blog:hover .si-sns-icon { background: #02B351; }
 `;
   document.head.appendChild(s);
 
@@ -1153,6 +1163,7 @@ body {
       else if (txt.indexOf('blog') !== -1 || txt.indexOf('블로그') !== -1) found.blog = href;
     });
 
+    var labels = { instagram: 'Instagram', youtube: 'YouTube', kakao: 'KakaoTalk', blog: 'Blog' };
     var iconWrap = document.createElement('div');
     iconWrap.className = 'si-sns-icons';
     ['instagram','youtube','kakao','blog'].forEach(function(key) {
@@ -1161,14 +1172,13 @@ body {
       a.href = found[key];
       a.target = '_blank';
       a.rel = 'noopener';
-      a.className = 'si-sns-icon si-sns-' + key;
-      a.innerHTML = snsIcons[key];
-      a.title = key.charAt(0).toUpperCase() + key.slice(1);
+      a.className = 'si-sns-item si-sns-' + key;
+      a.innerHTML = '<span class="si-sns-icon">' + snsIcons[key] + '</span><span class="si-sns-label">' + labels[key] + '</span>';
       iconWrap.appendChild(a);
     });
 
     if (iconWrap.children.length > 0) {
-      snsContainer.parentElement.insertBefore(iconWrap, snsContainer);
+      footer.parentElement.insertBefore(iconWrap, footer);
       snsContainer.style.display = 'none';
     }
   }
