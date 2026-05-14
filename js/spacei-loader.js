@@ -935,14 +935,14 @@ input, button, textarea, select { font: inherit; }
   bottom: 2rem;
   left: 1.5rem;
   z-index: 20;
-  max-width: 320px;
+  max-width: 260px;
 }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-  padding: 1.5rem 1.5rem;
+  padding: 1.25rem 1.25rem;
   text-align: left;
 }
 .si-speech-bubble-inner p:first-child {
@@ -950,17 +950,17 @@ input, button, textarea, select { font: inherit; }
 }
 .si-speech-bubble-inner p:last-of-type {
   color: #1B2A4A !important;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   text-align: left;
 }
 .si-speech-bubble-tail {
   position: absolute;
-  top: -18px;
-  right: 10%;
+  top: -14px;
+  right: 12%;
   width: 0;
   height: 0;
-  border: 12px solid transparent;
-  border-bottom: 20px solid #E74C3C;
+  border: 10px solid transparent;
+  border-bottom: 16px solid white;
   border-top: 0;
 }
 
@@ -1060,7 +1060,7 @@ input, button, textarea, select { font: inherit; }
   .si-md-justify-between { justify-content: space-between; }
   .si-md-order-1 { order: 1; }
   .si-md-order-2 { order: 2; }
-  .si-speech-bubble { max-width: 420px; }
+  .si-speech-bubble { max-width: 340px; }
   .si-shield-wrapper { margin-bottom: -42px; }
   .si-owner-card-content { padding: 5rem 3.5rem 4rem; }
   .si-map-iframe { height: 20rem; }
