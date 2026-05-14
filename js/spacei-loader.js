@@ -1220,18 +1220,13 @@ body {
     }, { passive: true });
   }
 
-  // 푸터 로고 교체 (가로형 + 크기 확대)
-  function replaceFooterLogo() {
+  // 푸터 로고 크기 확대
+  function enlargeFooterLogo() {
     var footer = document.getElementById('footer');
     if (!footer) return;
     var imgs = footer.querySelectorAll('img');
-    for (var i = 0; i < imgs.length; i++) {
-      if (imgs[i].width < 200 || imgs[i].src.indexOf('logo') !== -1 || i === 0) {
-        imgs[i].src = 'https://space-i-workspace.github.io/assets/images/logo_spacei_h_cropped.png';
-        imgs[i].style.cssText = 'width: 200px !important; height: auto !important; max-width: 200px !important;';
-        imgs[i].alt = '공간i SPACE i';
-        break;
-      }
+    if (imgs.length > 0) {
+      imgs[0].style.cssText = 'width: 160px !important; height: auto !important; max-width: 160px !important; image-rendering: auto !important;';
     }
   }
 
@@ -1239,11 +1234,11 @@ body {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
       initQuickBtn();
-      replaceFooterLogo();
+      enlargeFooterLogo();
     });
   } else {
     transformSnsLinks();
     initQuickBtn();
-    replaceFooterLogo();
+    enlargeFooterLogo();
   }
 })();
