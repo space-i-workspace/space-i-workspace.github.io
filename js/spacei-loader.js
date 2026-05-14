@@ -1158,7 +1158,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  padding: 2.5rem 1rem 2rem;
+  padding: 1rem 1rem 2rem;
   background: #f9f9f9;
 }
 .si-sns-item {
