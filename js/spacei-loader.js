@@ -1068,10 +1068,11 @@ input, button, textarea, select { font: inherit; }
   .split-section { grid-template-columns: 1fr; min-height: auto; }
   .hero-section { min-height: 100svh; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
-  .si-speech-bubble { max-width: 280px; top: auto; bottom: 1rem; left: 1rem; }
-  .si-speech-bubble-inner { padding: 1rem 1.25rem; }
-  .si-speech-bubble-inner p:last-child { font-size: 1rem; }
-  .si-speech-bubble-tail { top: -0.6rem; left: 1.5rem; right: auto; transform: rotate(45deg); box-shadow: -2px -2px 3px rgba(0,0,0,0.04); }
+  .si-speech-bubble { max-width: 220px; top: auto; bottom: 1.5rem; left: 1rem; }
+  .si-speech-bubble-inner { padding: 0.875rem 1.125rem; border-radius: 1.25rem; }
+  .si-speech-bubble-inner p:first-child { font-size: 0.625rem; margin-bottom: 0.25rem; }
+  .si-speech-bubble-inner p:last-child { font-size: 0.8rem; }
+  .si-speech-bubble-tail { top: -0.5rem; left: auto; right: 1.5rem; transform: rotate(45deg); width: 1.2rem; height: 1.2rem; box-shadow: -2px -2px 3px rgba(0,0,0,0.04); }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
