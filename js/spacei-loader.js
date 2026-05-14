@@ -935,32 +935,33 @@ input, button, textarea, select { font: inherit; }
   bottom: 2rem;
   left: 1.5rem;
   z-index: 20;
-  max-width: 260px;
+  max-width: 220px;
 }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-  padding: 1.25rem 1.25rem;
+  padding: 1rem 1rem;
   text-align: left;
 }
 .si-speech-bubble-inner p:first-child {
   color: #10B981 !important;
+  font-size: 0.65rem;
 }
 .si-speech-bubble-inner p:last-of-type {
   color: #1B2A4A !important;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   text-align: left;
 }
 .si-speech-bubble-tail {
   position: absolute;
-  top: -14px;
-  right: 12%;
+  top: -12px;
+  right: -10px;
   width: 0;
   height: 0;
-  border: 10px solid transparent;
-  border-bottom: 16px solid white;
+  border: 8px solid transparent;
+  border-bottom: 14px solid white;
   border-top: 0;
 }
 
@@ -1060,7 +1061,7 @@ input, button, textarea, select { font: inherit; }
   .si-md-justify-between { justify-content: space-between; }
   .si-md-order-1 { order: 1; }
   .si-md-order-2 { order: 2; }
-  .si-speech-bubble { max-width: 340px; }
+  .si-speech-bubble { max-width: 280px; }
   .si-shield-wrapper { margin-bottom: -42px; }
   .si-owner-card-content { padding: 5rem 3.5rem 4rem; }
   .si-map-iframe { height: 20rem; }
@@ -1077,10 +1078,10 @@ input, button, textarea, select { font: inherit; }
   .split-section { grid-template-columns: 1fr; min-height: auto; }
   .hero-section { min-height: 100svh; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
-  .si-speech-bubble { max-width: 220px; top: auto; bottom: 1rem; left: 0.75rem; }
-  .si-speech-bubble-inner { padding: 1.25rem 1.25rem; }
-  .si-speech-bubble-inner p:first-child { font-size: 0.65rem; margin-bottom: 0.25rem; }
-  .si-speech-bubble-inner p:last-of-type { font-size: 0.85rem; }
+  .si-speech-bubble { max-width: 180px; top: auto; bottom: 1rem; left: 0.75rem; }
+  .si-speech-bubble-inner { padding: 0.85rem 0.85rem; }
+  .si-speech-bubble-inner p:first-child { font-size: 0.55rem; margin-bottom: 0.25rem; }
+  .si-speech-bubble-inner p:last-of-type { font-size: 0.75rem; }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
