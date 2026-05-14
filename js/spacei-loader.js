@@ -822,12 +822,14 @@ input, button, textarea, select { font: inherit; }
   .si-thankyou-btns { flex-direction: column; }
   .si-thankyou-card { padding: 3rem 1.5rem 2.5rem; }
   .si-hero-title { font-size: 1.6rem !important; }
-  .si-doc-card { padding: 1rem 0.75rem !important; }
-  .si-doc-card p { font-size: 0.95rem !important; }
-  .si-stamp-inner { width: 4.5rem !important; height: 4.5rem !important; }
-  .si-stamp-inner span { font-size: 1.1rem !important; }
-  .si-equal-circle { width: 2.5rem !important; height: 2.5rem !important; }
-  .si-equal-circle span { font-size: 1rem !important; }
+  .si-doc-card { padding: 1.2rem 0.75rem !important; }
+  .si-doc-card p { font-size: 0.9rem !important; }
+  .si-doc-highlight { padding: 0.5rem 0.5rem !important; }
+  .si-doc-highlight p { font-size: 0.8rem !important; }
+  .si-stamp-inner { width: 4rem !important; height: 4rem !important; }
+  .si-stamp-inner span { font-size: 1rem !important; }
+  .si-equal-circle { width: 2.2rem !important; height: 2.2rem !important; }
+  .si-equal-circle span { font-size: 0.9rem !important; }
 }
 
 /* ===== 카카오 플로팅 ===== */
