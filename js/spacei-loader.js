@@ -1232,6 +1232,26 @@ body {
     }, { passive: true });
   }
 
+  // 모바일 하단 네비 검색/장바구니 숨김
+  function hideBottomNavItems() {
+    var allLinks = document.querySelectorAll('a');
+    allLinks.forEach(function(a) {
+      var href = (a.href || '').toLowerCase();
+      var isBottom = false;
+      var el = a.closest('[style*="fixed"]') || a.closest('nav') || a.closest('footer');
+      if (!el) {
+        var rect = a.getBoundingClientRect();
+        if (rect.top > window.innerHeight - 80) isBottom = true;
+      } else {
+        isBottom = true;
+      }
+      if (isBottom && (href.indexOf('search') !== -1 || href.indexOf('cart') !== -1 || href.indexOf('basket') !== -1)) {
+        a.style.display = 'none';
+      }
+    });
+  }
+  setTimeout(hideBottomNavItems, 1500);
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
