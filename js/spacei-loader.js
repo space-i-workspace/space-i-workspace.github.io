@@ -935,25 +935,28 @@ input, button, textarea, select { font: inherit; }
   top: 2rem;
   left: 1.5rem;
   z-index: 20;
-  max-width: 340px;
+  max-width: 280px;
 }
 .si-speech-bubble-inner {
   position: relative;
   background: white;
   border-radius: 50px;
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.75rem;
+}
+.si-speech-bubble-inner p:last-child {
+  font-size: 1.05rem;
 }
 .si-speech-bubble-tail {
   position: absolute;
-  top: -0.6rem;
-  right: 2rem;
+  top: 30%;
+  right: -0.6rem;
   left: auto;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background: white;
-  transform: rotate(45deg);
-  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(30deg);
+  box-shadow: 3px -2px 3px rgba(0,0,0,0.04);
 }
 
 /* ===== 빌딩 배경 (신뢰 섹션) ===== */
