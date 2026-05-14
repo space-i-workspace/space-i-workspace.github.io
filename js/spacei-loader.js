@@ -207,10 +207,10 @@ input, button, textarea, select { font: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 24px;
+  padding: 8px 24px;
   border-radius: 100px;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #1B2A4A;
   background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 40%, #C8A96E 60%, #E8D49A 100%);
   border: 2px solid #B08D4A;
