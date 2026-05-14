@@ -544,7 +544,7 @@ input, button, textarea, select { font: inherit; }
   border-radius: 0.75rem;
   padding: 1rem 2.2rem;
   text-align: center;
-  background: rgba(229,62,62,0.12);
+  background: rgba(255,107,107,0.15);
   border: 3px solid #E53E3E;
   box-shadow: inset 0 0 0 2px transparent, 0 0 0 1px rgba(229,62,62,0.3);
   transform: rotate(-2deg);
