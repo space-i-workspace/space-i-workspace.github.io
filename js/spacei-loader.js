@@ -656,26 +656,29 @@ input, button, textarea, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #0D1829 0%, #1B2A4A 50%, #0D1829 100%);
+  background: radial-gradient(ellipse at 50% 40%, #1B2A4A 0%, #0D1829 70%);
   padding: 3rem 1rem;
 }
 .si-thankyou-card {
-  max-width: 36rem;
+  max-width: 42rem;
   width: 100%;
-  padding: 3.5rem 2.5rem;
-  border-radius: 1.5rem;
-  background: rgba(255,255,255,0.04);
-  border: 1.5px solid rgba(200,169,110,0.25);
-  box-shadow: 0 0 60px rgba(200,169,110,0.08), inset 0 1px 0 rgba(255,255,255,0.05);
+  padding: 4rem 3rem 3rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1.5px solid rgba(200,169,110,0.3);
+  box-shadow: 0 0 80px rgba(200,169,110,0.1), 0 0 30px rgba(200,169,110,0.05), inset 0 1px 0 rgba(255,255,255,0.08);
   text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .si-thankyou-check {
-  width: 5rem; height: 5rem;
+  width: 5.5rem; height: 5.5rem;
   border: 3px solid #C8A96E;
   border-radius: 9999px;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 2.5rem;
-  box-shadow: 0 0 20px rgba(200,169,110,0.3);
+  background: rgba(13,24,41,0.8);
+  box-shadow: 0 0 30px rgba(200,169,110,0.25), 0 0 60px rgba(200,169,110,0.1);
 }
 .si-thankyou-btn {
   display: inline-flex;
@@ -685,10 +688,11 @@ input, button, textarea, select { font: inherit; }
   padding: 1rem 2rem;
   border-radius: 0.5rem;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 13rem;
+  flex: 1;
+  min-width: 0;
 }
 .si-thankyou-btn:hover { transform: translateY(-2px); }
 .si-thankyou-btn-gold {
@@ -702,6 +706,15 @@ input, button, textarea, select { font: inherit; }
   border: 1.5px solid rgba(255,255,255,0.3);
 }
 .si-thankyou-btn-dark:hover { border-color: rgba(255,255,255,0.6); }
+.si-thankyou-btns {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 480px) {
+  .si-thankyou-btns { flex-direction: column; }
+  .si-thankyou-card { padding: 3rem 1.5rem 2.5rem; }
+}
 
 /* ===== 카카오 플로팅 ===== */
 
