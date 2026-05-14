@@ -1089,6 +1089,14 @@ nav a[href*="search"], nav a[href*="cart"], nav a[href*="basket"],
 .xans-layout-mobileaction a[href*="cart"],
 .xans-layout-mobileaction a[href*="basket"] { display: none !important; }
 
+/* 모바일 하단 네비 균등 배치 */
+.RTMB, .xans-layout-mobileaction, [class*="toolbar"],
+#quick_menu, .mobile_footer, #mobile_footer {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+}
+
 /* 위아래 화살표 숨김 */
 .xans-layout-moveTop,
 a[href="#header"], a[href="#footer"],
