@@ -1056,8 +1056,14 @@ div[id*="channel-chat"], iframe[title*="카카오"],
 div[class*="popup"], div[class*="layer_popup"],
 .xans-product-popup, .modal_popup { display: none !important; }
 
-/* ===== 우리 카카오 버튼 ===== */
-.si-kakao-float {
+/* 카카오 플로팅 + 위아래 화살표(#quick, .xans-layout-moveTop 등) 숨김 */
+.si-kakao-float,
+#quick, .quick, .xans-layout-moveTop,
+a[href="#header"], a[href="#footer"],
+div[class*="moveTop"], div[class*="scroll_top"],
+.btnTop, .btn_top, #topBtn, .top_btn { display: none !important; }
+
+.si-kakao-float-DISABLED {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
