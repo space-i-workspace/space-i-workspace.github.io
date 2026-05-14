@@ -905,7 +905,10 @@ input, button, textarea, select { font: inherit; }
 #topBanner, .topbanner_area, .top_banner,
 #kakao-talk-channel-chat-button, .kakao_chat_btn,
 #channel-chat-button-iframe, .BtnKakao,
-div[id*="channel-chat"], iframe[title*="카카오"] { display: none !important; }
+div[id*="channel-chat"], iframe[title*="카카오"],
+.xans-layout-popup, .popup_wrap, .pop_footer,
+div[class*="popup"], div[class*="layer_popup"],
+.xans-product-popup, .modal_popup { display: none !important; }
 
 /* ===== 우리 카카오 버튼 ===== */
 .si-kakao-float {
