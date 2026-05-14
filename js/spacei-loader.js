@@ -540,12 +540,16 @@ input, button, textarea, select { font: inherit; }
   margin-right: auto;
 }
 .si-match-banner-inner {
-  border-radius: 9999px;
-  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  padding: 0.85rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #C8A96E, #B08D4A);
-  border: 2px solid #D4BC8A;
-  box-shadow: 0 8px 30px rgba(200,169,110,0.3);
+  background: rgba(16, 185, 129, 0.15);
+  border-left: 4px solid #10B981;
+  box-shadow: none;
+}
+.si-match-banner-inner p {
+  color: #10B981 !important;
+  font-size: 1rem !important;
 }
 
 /* ===== 협약 이미지 카드 ===== */
