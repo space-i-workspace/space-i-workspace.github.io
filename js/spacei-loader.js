@@ -1337,6 +1337,13 @@ body {
   }
   window.addEventListener('pageshow', function(e) { if (e.persisted) restoreScroll(); });
 
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="thankyou"]');
+    if (link) {
+      try { sessionStorage.setItem('siScrollY', window.scrollY); } catch(err) {}
+    }
+  }, true);
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
