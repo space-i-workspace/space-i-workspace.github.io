@@ -206,14 +206,15 @@ input, button, textarea, select { font: inherit; }
 .si-cta-pulse { animation: ctaPulse 2s ease-in-out infinite; }
 .si-cta-pulse:hover { animation: none; }
 @keyframes fingerTap {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(4px) scale(0.92); }
 }
 .si-finger {
-  font-size: 2em;
+  font-size: 2.8em;
   display: inline-block;
-  animation: fingerTap 1s ease-in-out infinite !important;
-  margin-left: 8px;
+  animation: fingerTap 0.9s ease-in-out infinite !important;
+  margin-left: 10px;
+  vertical-align: -0.15em;
 }
 
 /* ===== 3초 간편문의 버튼 ===== */
@@ -1087,14 +1088,22 @@ div[class*="popup"], div[class*="layer_popup"],
 nav a[href*="search"], nav a[href*="cart"], nav a[href*="basket"],
 .xans-layout-mobileaction a[href*="search"],
 .xans-layout-mobileaction a[href*="cart"],
-.xans-layout-mobileaction a[href*="basket"] { display: none !important; }
+.xans-layout-mobileaction a[href*="basket"],
+.xans-layout-mobileaction li:nth-child(2),
+.RTMB li:nth-child(2),
+[class*="toolbar"] li:nth-child(2) { display: none !important; }
 
-/* 모바일 하단 네비 균등 배치 */
+/* 모바일 하단 네비 균등 배치 + 홈 가운데 */
 .RTMB, .xans-layout-mobileaction, [class*="toolbar"],
 #quick_menu, .mobile_footer, #mobile_footer {
   display: flex !important;
-  justify-content: space-evenly !important;
+  justify-content: center !important;
   align-items: center !important;
+}
+.RTMB > *, .xans-layout-mobileaction > *,
+[class*="toolbar"] > * {
+  flex: 1 !important;
+  text-align: center !important;
 }
 
 /* 스크롤 화살표(위/아래) 표시 유지 */
@@ -1254,7 +1263,7 @@ body {
     }, { passive: true });
   }
 
-  // 모바일 하단 네비 검색/장바구니 숨김
+  // 모바일 하단 네비 검색 숨김 + 홈 가운데
   function hideBottomNavItems() {
     var allLinks = document.querySelectorAll('a');
     allLinks.forEach(function(a) {
@@ -1269,6 +1278,9 @@ body {
       }
       if (isBottom && (href.indexOf('search') !== -1 || href.indexOf('cart') !== -1 || href.indexOf('basket') !== -1)) {
         a.style.display = 'none';
+        if (a.parentElement && a.parentElement.tagName === 'LI') {
+          a.parentElement.style.display = 'none';
+        }
       }
     });
   }
