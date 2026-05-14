@@ -956,7 +956,7 @@ input, button, textarea, select { font: inherit; }
 .si-speech-bubble-tail {
   position: absolute;
   top: -14px;
-  right: 5%;
+  left: 15%;
   width: 0;
   height: 0;
   border: 10px solid transparent;
@@ -1081,7 +1081,7 @@ input, button, textarea, select { font: inherit; }
   .si-speech-bubble-inner { padding: 1.25rem 1.25rem; }
   .si-speech-bubble-inner p:first-child { font-size: 0.65rem; margin-bottom: 0.25rem; }
   .si-speech-bubble-inner p:last-of-type { font-size: 0.85rem; }
-  .si-speech-bubble-tail { top: -12px; right: 8%; border: 8px solid transparent; border-bottom: 14px solid white; border-top: 0; }
+  .si-speech-bubble-tail { top: -12px; left: 15%; border: 8px solid transparent; border-bottom: 14px solid white; border-top: 0; }
   html, body { overflow-x: hidden !important; }
   #footer { overflow-x: hidden !important; }
   #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
