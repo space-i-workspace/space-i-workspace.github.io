@@ -198,6 +198,24 @@ input, button, textarea, select { font: inherit; }
 }
 .cta-gold svg { width: 22px; height: 22px; flex-shrink: 0; }
 
+/* CTA 펄스 애니메이션 + 손가락 이모지 */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(200,169,110,0.25), 0 6px 24px rgba(200,169,110,0.4), inset 0 1px 0 rgba(255,255,255,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(200,169,110,0.15), 0 6px 32px rgba(200,169,110,0.6), inset 0 1px 0 rgba(255,255,255,0.4); }
+}
+.si-cta-pulse { animation: ctaPulse 2s ease-in-out infinite; }
+.si-cta-pulse:hover { animation: none; }
+@keyframes fingerTap {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.si-finger {
+  font-size: 1.3em;
+  display: inline-block;
+  animation: fingerTap 1s ease-in-out infinite;
+  margin-right: 4px;
+}
+
 /* ===== 3초 간편문의 버튼 ===== */
 .quick-btn {
   position: fixed;
