@@ -587,54 +587,49 @@ input, button, textarea, select { font: inherit; }
   background: linear-gradient(to left, transparent, rgba(200,169,110,0.5));
 }
 
-/* ===== 전국최저가 리본 배너 ===== */
+/* ===== 전국최저가 배너 ===== */
 .si-ribbon-wrap {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.5rem;
   max-width: 36rem;
   margin: 0 auto;
-  height: 5rem;
+  padding: 0.5rem 0;
 }
-.si-ribbon-center {
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 30%, #C8A96E 70%, #E8D49A 100%);
-  padding: 4px;
-  clip-path: polygon(6% 0%, 94% 0%, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
+.si-ribbon-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8A96E);
 }
-.si-ribbon-inner {
-  background: linear-gradient(180deg, #F5E6A3 0%, #D4B96E 30%, #C8A96E 70%, #E8D49A 100%);
-  border: 2.5px solid #B08D4A;
-  clip-path: polygon(6% 0%, 94% 0%, 100% 50%, 94% 100%, 6% 100%, 0% 50%);
-  padding: 0.9rem 3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.si-ribbon-line-r {
+  background: linear-gradient(90deg, #C8A96E, transparent);
 }
 .si-ribbon-text {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 900;
-  color: #1B2A4A;
-  letter-spacing: 0.05em;
-}
-.si-ribbon-laurel {
-  font-size: 1.3rem;
-  filter: grayscale(1) brightness(0.4);
+  letter-spacing: 0.15em;
+  background: linear-gradient(180deg, #F5E6A3 0%, #C8A96E 50%, #B08D4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
 }
 .si-ribbon-sparkle {
   position: absolute;
-  color: rgba(245,230,163,0.8);
-  font-size: 1.2rem;
+  color: #E8D49A;
   z-index: 3;
-  animation: sparkle 2s ease-in-out infinite;
+  animation: sparkle 2.5s ease-in-out infinite;
+  text-shadow: 0 0 8px rgba(200,169,110,0.6);
 }
-.si-ribbon-sparkle-tl { top: -0.3rem; left: 15%; }
-.si-ribbon-sparkle-br { bottom: -0.3rem; right: 15%; animation-delay: 1s; }
+.si-ribbon-sparkle-tl { top: -0.5rem; left: 8%; font-size: 0.9rem; }
+.si-ribbon-sparkle-tr { top: -0.3rem; right: 10%; font-size: 0.7rem; animation-delay: 0.8s; }
+.si-ribbon-sparkle-bl { bottom: -0.3rem; left: 18%; font-size: 0.6rem; animation-delay: 1.6s; }
+.si-ribbon-sparkle-br { bottom: -0.5rem; right: 15%; font-size: 0.85rem; animation-delay: 1.2s; }
 @keyframes sparkle {
-  0%, 100% { opacity: 0.4; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.2); }
+  0%, 100% { opacity: 0.3; transform: scale(0.7); }
+  50% { opacity: 1; transform: scale(1.3); }
 }
 
 /* ===== 최종 CTA 버튼 ===== */
