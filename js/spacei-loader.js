@@ -593,32 +593,13 @@ input, button, textarea, select { font: inherit; }
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  text-decoration: none;
   transition: all 0.3s ease;
 }
 .si-kakao-float:hover { transform: scale(1.08); }
-.si-kakao-float-icon {
-  width: 3.5rem;
-  height: 3.5rem;
-  background: #FEE500;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-.si-kakao-float-icon svg { width: 1.75rem; height: 1.75rem; }
-.si-kakao-float-text {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #3C1E1E;
-  background: #FEE500;
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.25rem;
+.si-kakao-float img {
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 /* ===== CTA 버튼 그룹 ===== */
