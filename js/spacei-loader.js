@@ -201,7 +201,7 @@ input, button, textarea, select { font: inherit; }
 /* ===== 3초 간편문의 버튼 ===== */
 .quick-btn {
   position: fixed;
-  top: 20px;
+  top: 52px;
   right: 20px;
   z-index: 50;
   display: inline-flex;
@@ -593,6 +593,15 @@ input, button, textarea, select { font: inherit; }
   bottom: 1.5rem;
   right: 1.5rem;
   z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.si-kakao-float:hover { transform: scale(1.08); }
+.si-kakao-float-icon {
   width: 3.5rem;
   height: 3.5rem;
   background: #FEE500;
@@ -600,14 +609,17 @@ input, button, textarea, select { font: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.si-kakao-float:hover {
-  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-  transform: scale(1.1);
+.si-kakao-float-icon svg { width: 1.75rem; height: 1.75rem; }
+.si-kakao-float-text {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #3C1E1E;
+  background: #FEE500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
 }
-.si-kakao-float svg { width: 1.75rem; height: 1.75rem; }
 
 /* ===== CTA 버튼 그룹 ===== */
 .si-cta-group { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
@@ -854,7 +866,10 @@ input, button, textarea, select { font: inherit; }
 .xans-layout-banner, .xans-layout-logotop,
 .xans-product-listmain, .xans-layout-category,
 .section.main_product_category,
-#topBanner, .topbanner_area, .top_banner { display: none !important; }
+#topBanner, .topbanner_area, .top_banner,
+#kakao-talk-channel-chat-button, .kakao_chat_btn,
+#channel-chat-button-iframe, .BtnKakao,
+div[id*="channel-chat"], iframe[title*="카카오"] { display: none !important; }
 
 /* 카페24 기본 레이아웃 제한 해제 */
 #wrap, #container, #contents {
