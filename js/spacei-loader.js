@@ -849,7 +849,12 @@ input, button, textarea, select { font: inherit; }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
 #skipNavigation, #header, #sidebar, #footer, #quick, hr.layout,
-.layer_shadow, #layoutDimmed { display: none !important; }
+.layer_shadow, #layoutDimmed,
+.smart-banner, [class*="smart-banner"], [data-banner-code],
+.xans-layout-banner, .xans-layout-logotop,
+.xans-product-listmain, .xans-layout-category,
+.section.main_product_category,
+#topBanner, .topbanner_area, .top_banner { display: none !important; }
 
 /* 카페24 기본 레이아웃 제한 해제 */
 #wrap, #container, #contents {
