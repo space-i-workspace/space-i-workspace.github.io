@@ -623,23 +623,6 @@ input, button, textarea, select { font: inherit; }
   font-size: 1.3rem;
   filter: grayscale(1) brightness(0.4);
 }
-.si-ribbon-tail-left, .si-ribbon-tail-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3.5rem;
-  height: 3rem;
-  background: linear-gradient(180deg, #D4B96E 0%, #B08D4A 100%);
-  z-index: 1;
-}
-.si-ribbon-tail-left {
-  left: 0;
-  clip-path: polygon(0% 50%, 35% 0%, 100% 0%, 100% 100%, 35% 100%);
-}
-.si-ribbon-tail-right {
-  right: 0;
-  clip-path: polygon(0% 0%, 65% 0%, 100% 50%, 65% 100%, 0% 100%);
-}
 .si-ribbon-sparkle {
   position: absolute;
   color: rgba(245,230,163,0.8);
