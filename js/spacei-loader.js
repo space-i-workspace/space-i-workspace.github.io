@@ -1032,6 +1032,9 @@ input, button, textarea, select { font: inherit; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
   .si-mobile-bubble { display: block; }
   .si-desktop-only { display: none; }
+  html, body { overflow-x: hidden !important; }
+  #footer { overflow-x: hidden !important; }
+  #footer * { max-width: 100vw !important; box-sizing: border-box !important; }
 }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
