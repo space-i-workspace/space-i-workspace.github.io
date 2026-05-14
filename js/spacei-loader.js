@@ -167,7 +167,7 @@ input, button, textarea, select { font: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('https://space-i-workspace.github.io/assets/images/p35_main.jpg') center/cover no-repeat;
+  background: url('https://space-i-workspace.github.io/assets/images/p35_main.jpg') 30% center/cover no-repeat;
 }
 .hero-section::after {
   content: '';
