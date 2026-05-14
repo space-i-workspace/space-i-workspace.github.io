@@ -210,10 +210,11 @@ input, button, textarea, select { font: inherit; }
   50% { transform: translateY(-6px); }
 }
 .si-finger {
-  font-size: 1.3em;
+  font-size: 2em;
   display: inline-block;
-  animation: fingerTap 1s ease-in-out infinite;
-  margin-right: 4px;
+  animation: fingerTap 1s ease-in-out infinite !important;
+  margin-left: 8px;
+  order: 2;
 }
 
 /* ===== 3초 간편문의 버튼 ===== */
