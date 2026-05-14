@@ -845,8 +845,6 @@ input, button, textarea, select { font: inherit; }
   .si-service-split { flex-direction: column !important; gap: 2rem !important; }
   .si-mobile-bubble { display: block; }
   .si-desktop-only { display: none; }
-  .quick-btn { top: auto; bottom: 1.5rem; left: 1.5rem; right: auto; }
-  .si-kakao-float { bottom: 1.5rem; right: 1.5rem; }
 }
 
 /* ===== 카페24 기본 요소 숨김 ===== */
