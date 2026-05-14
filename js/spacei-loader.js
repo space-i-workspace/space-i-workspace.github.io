@@ -1220,25 +1220,13 @@ body {
     }, { passive: true });
   }
 
-  // 푸터 로고 크기 확대
-  function enlargeFooterLogo() {
-    var footer = document.getElementById('footer');
-    if (!footer) return;
-    var imgs = footer.querySelectorAll('img');
-    if (imgs.length > 0) {
-      imgs[0].style.cssText = 'width: 160px !important; height: auto !important; max-width: 160px !important; image-rendering: auto !important;';
-    }
-  }
-
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       transformSnsLinks();
       initQuickBtn();
-      enlargeFooterLogo();
     });
   } else {
     transformSnsLinks();
     initQuickBtn();
-    enlargeFooterLogo();
   }
 })();
