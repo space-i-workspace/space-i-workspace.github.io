@@ -49,3 +49,6 @@
 | 2026-04-30 | 결제 링크를 카페24 주문서 직접 연결로 변경 |
 | 2026-04-30 | meta referrer no-referrer 적용 (카카오 이전페이지 표시 방지) |
 | 2026-05-01 | 카페24 layout.html에 OG 메타태그 추가 안내 (d05_interior2.jpg) |
+| 2026-10-03 | 구글 검색용 블로그 구역 /blog/ 신설, 첫 글 "양재 공유오피스 고르는 법"(blog/yangjae-coworking-guide), sitemap.xml·robots.txt 추가 |
+| 2026-10-03 | 예전 첫 화면(index.html) 삭제 → /blog/ 로 넘어가는 페이지로 교체(원본 백업 blogautomation_spacei/backups/github_site_index_before_delete_20261003.html) |
+| 2026-10-03 | 끊긴 투어 링크 rcl.ink → naver.me/xxRIooqz (product·index-new·index-cafe24·cafe24-body) |

@@ -38,6 +38,6 @@ spacei-website/
 
 ## 주의사항
 - 전화번호: 010-9815-3017
-- 예약 링크: https://rcl.ink/yZR4y
+- 예약 링크: https://naver.me/xxRIooqz
 - 카카오톡 채널: https://pf.kakao.com/_Axmxdzs/chat
 - 결제 링크: https://spaceicowork.cafe24.com/order/orderform.html?basket_type=A0000&delvtype=A
