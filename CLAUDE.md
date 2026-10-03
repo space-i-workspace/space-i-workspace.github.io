@@ -14,8 +14,13 @@ python3 -m http.server 8000
 
 ## 파일 구조
 ```
-spacei-website/
-├── index.html               # 메인 원페이지 (9개 섹션)
+spacei-website/            # = space-i-workspace.github.io (main 에 push 하면 1~2분 뒤 반영)
+├── index.html               # /blog/ 로 넘어가는 페이지 (2026-10-03 예전 랜딩 삭제) + 구글 소유 확인 메타태그(삭제 금지)
+├── googlee54d0d2f5d8849e0.html  # 구글 서치콘솔 소유 확인 파일 (삭제 금지)
+├── blog/                    # 구글 검색용 글 (blog.css, index.html 목록, <영문>/index.html 글)
+├── sitemap.xml, robots.txt  # 글 추가 때 sitemap.xml 에 주소 추가
+├── assets/blog/photos/      # 자사몰·블로그 글 사진 (1000px, 같은 사진 한 번만)
+├── css/·js/·spacei-landing.css·assets/images/  # 카페24 랜딩이 불러 씀 — 지우지 말 것
 ├── product.html             # 상세 상품/주문 페이지
 ├── why-virtual-office.html  # "왜 비상주사무실인가" 전용 페이지
 ├── css/styles.css           # 커스텀 스타일 (네이비/골드 테마)

@@ -52,3 +52,4 @@
 | 2026-10-03 | 구글 검색용 블로그 구역 /blog/ 신설, 첫 글 "양재 공유오피스 고르는 법"(blog/yangjae-coworking-guide), sitemap.xml·robots.txt 추가 |
 | 2026-10-03 | 예전 첫 화면(index.html) 삭제 → /blog/ 로 넘어가는 페이지로 교체(원본 백업 blogautomation_spacei/backups/github_site_index_before_delete_20261003.html) |
 | 2026-10-03 | 끊긴 투어 링크 rcl.ink → naver.me/xxRIooqz (product·index-new·index-cafe24·cafe24-body) |
+| 2026-10-03 | 구글 서치콘솔 등록(임관장 계정, 소유 확인 파일+메타태그), 사이트맵 제출, 첫 글 실제 URL 테스트 '등록할 수 있음' 확인. 글 쓰는 법은 blogautomation_spacei/docs/MANUAL_publish.md '깃허브' |
