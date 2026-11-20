@@ -1,7 +1,7 @@
 # 서초구 공유오피스 역·주차·출입 비교표 | 서초 공유오피스 양재 공간i
 
 - 게시판: 카페24 사업정보 게시판
-- 글 주소: (게시 후 기록)
+- 글 주소: https://spaceicowork.cafe24.com/article/%EC%82%AC%EC%97%85%EC%A0%95%EB%B3%B4-%EA%B2%8C%EC%8B%9C%ED%8C%90/5/18/
 - 사진 10장 (공용 폴더 assets/blog/photos/):
 
   - 01 → photos/533f59d92d9f.jpg — 서초구 공유오피스 공간i 13층 창가 라운지
