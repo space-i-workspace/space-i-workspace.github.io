@@ -55,3 +55,4 @@
 | 2026-10-03 | 구글 서치콘솔 등록(임관장 계정, 소유 확인 파일+메타태그), 사이트맵 제출, 첫 글 실제 URL 테스트 '등록할 수 있음' 확인. 글 쓰는 법은 blogautomation_spacei/docs/MANUAL_publish.md '깃허브' |
 | 2026-10-04 | 네이버 서치어드바이저 소유 확인(파일 naverc809….html + index.html 메타태그, 삭제 금지), RSS feed.xml 추가 |
 | 2026-10-06 | 블로그 글 링크: 보이는 글자=주소, 지도 58HQqHk1, 카카오 https, 전화번호 모두 tel 링크(대표님: 링크·전화 검수) |
+| 2026-11-25 | 사이트 이름 '공간i 공유오피스 양재동'(대표님): 첫 화면·/blog/ 에 WebSite 구조화 데이터(name, alternateName 공간i·공간i 공유오피스·공간i 블로그·공간아이) + og:site_name, 글 5편에 og:site_name(목록 og:site_name '공간i 블로그' → 새 이름). 커밋 6a26f07. 새 글은 첫 글 형식 복사라 og:site_name 자동 포함 |
